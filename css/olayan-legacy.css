@@ -1,0 +1,71 @@
+/* ==========================================================
+   The Olayan Legacy page. Shared foundations live in main.css.
+   ========================================================== */
+
+/* ---------- Biography ---------- */
+.legacy-bio {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.legacy-portrait {
+  position: sticky;
+  top: calc(84px + var(--space-md));
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--color-primary), var(--color-primary-dark));
+  box-shadow: var(--shadow-md);
+}
+
+.legacy-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.legacy-bio .stat-grid {
+  margin-bottom: var(--space-lg);
+}
+
+/* ---------- Philanthropy ---------- */
+.legacy-foundation {
+  padding: 2.25rem;
+}
+
+.legacy-foundation .content-card-title {
+  margin-bottom: 0.4rem;
+  font-size: 1.4rem;
+}
+
+.legacy-foundation .content-card-copy {
+  margin-bottom: var(--space-md);
+  font-size: 1rem;
+}
+
+/* ---------- The building ---------- */
+.legacy-building__facts {
+  max-width: 620px;
+  margin-top: var(--space-lg);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .legacy-bio {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .legacy-portrait {
+    position: static;
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 580px) {
+  .legacy-foundation {
+    padding: 1.5rem;
+  }
+}
