@@ -28,110 +28,322 @@
   color: var(--color-text-muted);
 }
 
-/* ---------- Research ---------- */
-.about-research__topics {
-  padding-top: 0.5rem;
-}
-
-.about-research__topics .content-card-title {
-  margin-bottom: var(--space-sm);
-}
-
-/* ---------- Vision and mission ---------- */
-.about-vm__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.16);
-}
-
-.about-vm__item {
-  padding: 2.75rem;
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.about-vm__item h3 {
-  margin-bottom: var(--space-sm);
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-
-.about-vm__item p {
-  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-}
-
-/* ---------- History timeline ---------- */
-.timeline {
-  --date-col: 10rem;
-
-  position: relative;
-  display: grid;
-  gap: var(--space-md);
+/* ---------- Research (burgundy section, solid white cards) ---------- */
+.about-research__intro {
   margin-bottom: var(--space-xl);
+}
+
+.about-research__intro .section-header {
+  margin-bottom: 0;
+}
+
+.about-research__label {
+  margin-bottom: var(--space-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.initiative-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--space-md);
   list-style: none;
 }
 
+.initiative-card {
+  --card-lift-distance: -6px;
+  --card-lift-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
+
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-column: span 2;
+  padding: 2.25rem;
+  color: var(--color-ink);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+}
+
+.initiative-card:nth-child(n + 4) {
+  grid-column: span 3;
+}
+
+.initiative-card svg {
+  width: 56px;
+  height: 56px;
+  color: var(--color-primary);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.initiative-card h3 {
+  margin: var(--space-lg) 0 0;
+  color: var(--color-ink);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ---------- Vision and mission (cards, plain section) ---------- */
+.vm-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.vm-card {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem;
+  border: 1px solid rgba(17, 17, 17, 0.14);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  --card-lift-shadow: var(--shadow-hover);
+}
+
+.vm-card__icon {
+  display: grid;
+  width: 76px;
+  height: 76px;
+  place-items: center;
+  margin-bottom: var(--space-md);
+  color: var(--color-white);
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: var(--shadow-button);
+}
+
+.vm-card__icon svg {
+  width: 38px;
+  height: 38px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.vm-card__watermark {
+  position: absolute;
+  right: -40px;
+  bottom: -40px;
+  width: 240px;
+  height: 240px;
+  color: var(--color-primary);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.6;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.vm-card h3 {
+  margin-bottom: var(--space-sm);
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.vm-card p {
+  position: relative;
+  max-width: 28ch;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+/* ---------- History timeline (burgundy section) ---------- */
+.about-history .section-header {
+  margin-bottom: var(--space-xl);
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: var(--space-lg);
+  list-style: none;
+}
+
+/* Central spine */
 .timeline::before {
   position: absolute;
-  top: 0.6rem;
-  bottom: 0.6rem;
-  left: calc(var(--date-col) + var(--space-md) + 7px);
+  top: 0;
+  bottom: 0;
+  left: 50%;
   width: 2px;
-  background: var(--color-primary-mid);
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.55) 6%, rgba(255, 255, 255, 0.55) 94%, transparent);
   content: "";
+  transform: translateX(-50%);
 }
 
 .timeline__item {
   display: grid;
-  grid-template-columns: var(--date-col) 16px minmax(0, 1fr);
-  gap: var(--space-md);
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr);
+  column-gap: var(--space-lg);
+  align-items: center;
 }
 
-.timeline__date {
-  color: var(--color-primary);
-  font-size: 1.1rem;
-  font-weight: 700;
+.timeline__year {
+  grid-column: 1;
+  grid-row: 1;
   text-align: right;
 }
 
 .timeline__dot {
   position: relative;
   z-index: 1;
-  width: 16px;
-  height: 16px;
-  margin-top: 0.2rem;
-  border: 3px solid var(--color-primary);
+  grid-column: 2;
+  grid-row: 1;
+  width: 18px;
+  height: 18px;
+  margin-inline: auto;
   border-radius: 50%;
   background: var(--color-white);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
 }
 
-.timeline__text {
-  color: var(--color-text-muted);
-  font-size: 1.02rem;
+.timeline__card {
+  grid-column: 3;
+  grid-row: 1;
+  padding: 1.35rem 1.6rem;
+  color: var(--color-ink);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+  font-size: 1.05rem;
+  line-height: 1.5;
 }
 
-.about-history__story {
+/* Alternate sides on desktop */
+.timeline__item:nth-child(even) .timeline__year {
+  grid-column: 3;
+  text-align: left;
+}
+
+.timeline__item:nth-child(even) .timeline__card {
+  grid-column: 1;
+}
+
+.timeline__year strong {
+  display: block;
+  color: var(--color-white);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.timeline__year span {
+  display: block;
+  margin-top: 0.4rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Key milestones: bigger dot, bolder card */
+.timeline__item--key .timeline__dot {
+  width: 28px;
+  height: 28px;
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.25);
+}
+
+.timeline__item--key .timeline__card {
+  font-weight: 700;
+  box-shadow: inset 0 4px 0 var(--color-primary), 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- Story: horizontal cards with images ---------- */
+.story-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-lg);
 }
 
-.about-history__story h3 {
-  margin-bottom: 0.75rem;
-  font-size: 1.3rem;
-  font-weight: 700;
+.story-card {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  overflow: hidden;
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  --card-lift-shadow: var(--shadow-hover);
 }
 
-.about-history__story p {
+.story-card:nth-child(even) {
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+}
+
+.story-card:nth-child(even) .story-card__media {
+  order: 2;
+}
+
+.story-card__media {
+  position: relative;
+  min-height: 280px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+}
+
+.story-card__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out);
+}
+
+.story-card:hover .story-card__media img {
+  transform: scale(1.05);
+}
+
+.story-card__badge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  z-index: 1;
+  padding: 0.4rem 1rem;
+  color: var(--color-white);
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.story-card__body {
+  align-self: center;
+  padding: 2.75rem;
+}
+
+.story-card__body h3 {
+  margin-bottom: 0.85rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.story-card__body p {
   color: var(--color-text-muted);
   line-height: 1.7;
+}
+
+.story-card__body p+p {
+  margin-top: 1rem;
 }
 
 .about-history__more {
@@ -146,45 +358,92 @@
 }
 
 @media (max-width: 1024px) {
-  .about-history__story {
+  .initiative-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .initiative-card,
+  .initiative-card:nth-child(n + 4) {
+    grid-column: span 1;
+  }
+
+  .initiative-card:last-child {
+    grid-column: span 2;
+  }
+
+  .story-card,
+  .story-card:nth-child(even) {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .story-card:nth-child(even) .story-card__media {
+    order: 0;
+  }
+
+  .story-card__media {
+    min-height: 220px;
   }
 }
 
 @media (max-width: 768px) {
-  .about-vm__grid {
+  .vm-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .about-vm__item {
+  .vm-card {
+    padding: 2rem;
+  }
+
+  .story-card__body {
     padding: 1.75rem;
+  }
+
+  /* Timeline: single column, spine on the left */
+  .timeline::before {
+    left: 13px;
+    transform: none;
+  }
+
+  .timeline__item,
+  .timeline__item:nth-child(even) {
+    grid-template-columns: 28px minmax(0, 1fr);
+    column-gap: var(--space-md);
+    align-items: start;
+  }
+
+  .timeline__dot {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    margin-top: 0.5rem;
+  }
+
+  .timeline__year,
+  .timeline__item:nth-child(even) .timeline__year {
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 0.6rem;
+    text-align: left;
+  }
+
+  .timeline__card,
+  .timeline__item:nth-child(even) .timeline__card {
+    grid-column: 2;
+    grid-row: 2;
   }
 }
 
 @media (max-width: 640px) {
-  .about-programs__grid {
+  .about-programs__grid,
+  .initiative-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .timeline::before {
-    left: 7px;
+  .initiative-card:last-child {
+    grid-column: span 1;
   }
 
-  .timeline__item {
-    grid-template-columns: 16px minmax(0, 1fr);
-    gap: 0 var(--space-sm);
-  }
-
-  .timeline__dot {
-    grid-row: 1 / span 2;
-  }
-
-  .timeline__date {
-    grid-column: 2;
-    text-align: left;
-  }
-
-  .timeline__text {
-    grid-column: 2;
+  .initiative-card {
+    min-height: 200px;
+    padding: 1.75rem;
   }
 }

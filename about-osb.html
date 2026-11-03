@@ -51,9 +51,11 @@
     </header>
 
     <main id="main">
-        <!-- HERO -->
+        <!-- HERO (add a photo at images/hero/about-osb.jpg; the overlay keeps the text readable) -->
         <section class="inner-hero theme-dark">
-            <div class="inner-hero__background" aria-hidden="true"></div>
+            <div class="inner-hero__background" aria-hidden="true">
+                <img class="inner-hero__image" src="images/hero/about-osb.jpg" alt="" onerror="this.remove()" />
+            </div>
             <div class="container inner-hero__container">
                 <nav aria-label="Breadcrumb" class="inner-breadcrumb">
                     <span>OSB</span>
@@ -98,7 +100,6 @@
         <section class="about-programs section--muted">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="eyebrow">Our programs</span>
                     <h2>World-Class Programs</h2>
                     <p>
                         The <a href="https://aub.edu.lb//osb" target="_blank" rel="noopener">school</a> currently
@@ -157,119 +158,178 @@
             </div>
         </section>
 
-        <!-- RESEARCH -->
-        <section class="about-research">
+        <!-- RESEARCH (burgundy section, solid white cards) -->
+        <section class="about-research surface-burgundy theme-dark">
             <div class="container">
-                <div class="layout-split">
-                    <div class="reveal">
-                        <div class="section-header">
-                            <span class="eyebrow">Research and global reach</span>
-                            <h2>Research Hubs and Global Initiatives</h2>
-                        </div>
-                        <div class="prose">
-                            <p>
-                                OSB hosts several research hubs and areas of excellence, manages global initiatives
-                                covering a wide array of subjects, and features award-winning faculty that hail from
-                                around the globe.
-                            </p>
-                        </div>
+                <div class="about-research__intro layout-split reveal">
+                    <div class="section-header">
+                        <h2>Research Hubs and Global Initiatives</h2>
                     </div>
-
-                    <div class="about-research__topics reveal reveal-delay-1">
-                        <h3 class="content-card-title">Initiatives cover</h3>
-                        <ul class="pill-list">
-                            <li>Data analytics</li>
-                            <li>Executive education</li>
-                            <li>Family business</li>
-                            <li>Entrepreneurship</li>
-                            <li>Corporate social responsibility</li>
-                        </ul>
+                    <div class="prose">
+                        <p>
+                            OSB hosts several research hubs and areas of excellence, manages global initiatives
+                            covering a wide array of subjects, and features award-winning faculty that hail from
+                            around the globe.
+                        </p>
                     </div>
                 </div>
+
+                <h3 class="about-research__label reveal">Initiatives cover</h3>
+                <ul class="initiative-grid">
+                    <li class="initiative-card card-lift reveal">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18" /><path d="M18 17V9" /><path d="M13 17V5" /><path d="M8 17v-3" /></svg>
+                        <h3>Data analytics</h3>
+                    </li>
+                    <li class="initiative-card card-lift reveal reveal-delay-1">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" /><path d="M22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" /></svg>
+                        <h3>Executive education</h3>
+                    </li>
+                    <li class="initiative-card card-lift reveal reveal-delay-2">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+                        <h3>Family business</h3>
+                    </li>
+                    <li class="initiative-card card-lift reveal reveal-delay-1">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6" /><path d="M10 22h4" /><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2V18h6v-1.3c0-.8.4-1.5 1-2A7 7 0 0 0 12 2z" /></svg>
+                        <h3>Entrepreneurship</h3>
+                    </li>
+                    <li class="initiative-card card-lift reveal reveal-delay-2">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg>
+                        <h3>Corporate social responsibility</h3>
+                    </li>
+                </ul>
             </div>
         </section>
 
-        <!-- VISION & MISSION -->
-        <section class="about-vm surface-dark theme-dark" id="vision-mission">
+        <!-- VISION & MISSION (plain section, cards with icons) -->
+        <section class="about-vm" id="vision-mission">
             <div class="container">
-                <div class="about-vm__grid reveal">
-                    <div class="about-vm__item">
+                <h2 class="sr-only">Vision and mission</h2>
+                <div class="vm-grid">
+                    <article class="vm-card card-lift reveal">
+                        <div class="vm-card__icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0" /><circle cx="12" cy="12" r="3" /></svg>
+                        </div>
+                        <svg class="vm-card__watermark" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0" /><circle cx="12" cy="12" r="3" /></svg>
                         <h3>Vision</h3>
                         <p>Transform business thinking in the MENA region.</p>
-                    </div>
-                    <div class="about-vm__item">
+                    </article>
+                    <article class="vm-card card-lift reveal reveal-delay-1">
+                        <div class="vm-card__icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>
+                        </div>
+                        <svg class="vm-card__watermark" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>
                         <h3>Mission</h3>
                         <p>Enable world-class business research, learning, and knowledge transfer from our authoritative
                             anchor point within the MENA region.</p>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- HISTORY -->
-        <section class="about-history" id="history">
+        <!-- HISTORY TIMELINE (burgundy section) -->
+        <section class="about-history surface-burgundy theme-dark" id="history">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="eyebrow">History</span>
                     <h2>From a Department to an Independent School</h2>
                 </div>
 
-                <ol class="timeline reveal">
-                    <li class="timeline__item"><span class="timeline__date">1866</span><span
-                            class="timeline__dot"></span><span class="timeline__text">AUB established</span></li>
-                    <li class="timeline__item"><span class="timeline__date">1900</span><span
-                            class="timeline__dot"></span><span class="timeline__text">Business education begins at
-                            AUB</span></li>
-                    <li class="timeline__item"><span class="timeline__date">September 2000</span><span
-                            class="timeline__dot"></span><span class="timeline__text">Independent school of business
-                            established, the sixth faculty of the university</span></li>
-                    <li class="timeline__item"><span class="timeline__date">Fall 2001</span><span
-                            class="timeline__dot"></span><span class="timeline__text">New BBA and MBA curricula
-                            introduced</span></li>
-                    <li class="timeline__item"><span class="timeline__date">June 2003</span><span
-                            class="timeline__dot"></span><span class="timeline__text">School named the Suliman S. Olayan
-                            School of Business</span></li>
-                    <li class="timeline__item"><span class="timeline__date">Spring 2004</span><span
-                            class="timeline__dot"></span><span class="timeline__text">Executive MBA launched</span></li>
-                    <li class="timeline__item"><span class="timeline__date">2009</span><span
-                            class="timeline__dot"></span><span class="timeline__text">Suliman S. Olayan Building
-                            inaugurated</span></li>
+                <ol class="timeline">
+                    <li class="timeline__item timeline__item--key reveal">
+                        <div class="timeline__year"><strong>1866</strong></div>
+                        <span class="timeline__dot" aria-hidden="true"></span>
+                        <div class="timeline__card">AUB established</div>
+                    </li>
+                    <li class="timeline__item reveal">
+                        <div class="timeline__year"><strong>1900</strong></div>
+                        <span class="timeline__dot" aria-hidden="true"></span>
+                        <div class="timeline__card">Business education begins at AUB</div>
+                    </li>
+                    <li class="timeline__item timeline__item--key reveal">
+                        <div class="timeline__year"><strong>2000</strong><span>September</span></div>
+                        <span class="timeline__dot" aria-hidden="true"></span>
+                        <div class="timeline__card">Independent school of business established, the sixth faculty of the university</div>
+                    </li>
+                    <li class="timeline__item reveal">
+                        <div class="timeline__year"><strong>2001</strong><span>Fall</span></div>
+                        <span class="timeline__dot" aria-hidden="true"></span>
+                        <div class="timeline__card">New BBA and MBA curricula introduced</div>
+                    </li>
+                    <li class="timeline__item timeline__item--key reveal">
+                        <div class="timeline__year"><strong>2003</strong><span>June</span></div>
+                        <span class="timeline__dot" aria-hidden="true"></span>
+                        <div class="timeline__card">School named the Suliman S. Olayan School of Business</div>
+                    </li>
+                    <li class="timeline__item reveal">
+                        <div class="timeline__year"><strong>2004</strong><span>Spring</span></div>
+                        <span class="timeline__dot" aria-hidden="true"></span>
+                        <div class="timeline__card">Executive MBA launched</div>
+                    </li>
+                    <li class="timeline__item reveal">
+                        <div class="timeline__year"><strong>2009</strong></div>
+                        <span class="timeline__dot" aria-hidden="true"></span>
+                        <div class="timeline__card">Suliman S. Olayan Building inaugurated</div>
+                    </li>
                 </ol>
+            </div>
+        </section>
 
-                <div class="about-history__story">
-                    <article class="reveal">
-                        <h3>From a department to an independent school</h3>
-                        <p>
-                            Business education at AUB started in 1900 and was provided either by a department or a
-                            semi-autonomous school under the Faculty of Arts and Sciences. In celebration of the
-                            hundred-year anniversary of offering business programs, AUB established in September 2000
-                            an independent school of business (later named the Suliman S. Olayan School of Business,
-                            “OSB”) as the sixth faculty of the university.
-                        </p>
+        <!-- THE STORY (horizontal image cards) -->
+        <section class="about-story section--muted">
+            <div class="container">
+                <div class="story-list">
+                    <article class="story-card card-lift reveal">
+                        <div class="story-card__media">
+                            <img src="images/about/history-independent-school.jpg" alt="" loading="lazy" onerror="this.remove()" />
+                            <span class="story-card__badge">2000</span>
+                        </div>
+                        <div class="story-card__body">
+                            <h3>From a department to an independent school</h3>
+                            <p>
+                                Business education at AUB started in 1900 and was provided either by a department or a
+                                semi-autonomous school under the Faculty of Arts and Sciences. In celebration of the
+                                hundred-year anniversary of offering business programs, AUB established in September 2000
+                                an independent school of business (later named the Suliman S. Olayan School of Business,
+                                “OSB”) as the sixth faculty of the university.
+                            </p>
+                        </div>
                     </article>
-                    <article class="reveal reveal-delay-1">
-                        <h3>Growth</h3>
-                        <p>
-                            To date, AUB has graduated over 8,000 students from its undergraduate business programs
-                            and over 1,800 from its graduate business programs. Since its formal establishment as a
-                            distinct school, OSB has grown its full-time faculty complement from 13 in the academic
-                            year 2000–01 to over 52 today. It now graduates approximately 350 students from its
-                            undergraduate program and 80 students from its graduate programs every year.
-                        </p>
+
+                    <article class="story-card card-lift reveal">
+                        <div class="story-card__media">
+                            <img src="images/about/growth.jpg" alt="" loading="lazy" onerror="this.remove()" />
+                            <span class="story-card__badge">8,000+ graduates</span>
+                        </div>
+                        <div class="story-card__body">
+                            <h3>Growth</h3>
+                            <p>
+                                To date, AUB has graduated over 8,000 students from its undergraduate business programs
+                                and over 1,800 from its graduate business programs. Since its formal establishment as a
+                                distinct school, OSB has grown its full-time faculty complement from 13 in the academic
+                                year 2000–01 to over 52 today. It now graduates approximately 350 students from its
+                                undergraduate program and 80 students from its graduate programs every year.
+                            </p>
+                        </div>
                     </article>
-                    <article class="reveal reveal-delay-2">
-                        <h3>The Olayan name and new curricula</h3>
-                        <p>
-                            In June 2003, the AUB School of Business was named the Suliman S. Olayan School of
-                            Business in honor of the late international Saudi businessman and AUB trustee whose family
-                            has always been a major supporter of AUB. This watershed event triggered a series of major
-                            developments intended to broaden and deepen the delivery of quality undergraduate and
-                            graduate business programs at AUB. Entirely new curricula were introduced for the BBA and
-                            MBA degrees in the fall of 2001. Both degrees were redesigned to follow leading trends in
-                            international business education. In the spring of 2004, OSB launched the Executive MBA
-                            (EMBA) program in response to the professional development needs of senior corporate
-                            leaders in the region.
-                        </p>
+
+                    <article class="story-card card-lift reveal">
+                        <div class="story-card__media">
+                            <img src="images/about/olayan-name.jpg" alt="" loading="lazy" onerror="this.remove()" />
+                            <span class="story-card__badge">2003</span>
+                        </div>
+                        <div class="story-card__body">
+                            <h3>The Olayan name and new curricula</h3>
+                            <p>
+                                In June 2003, the AUB School of Business was named the Suliman S. Olayan School of
+                                Business in honor of the late international Saudi businessman and AUB trustee whose family
+                                has always been a major supporter of AUB. This watershed event triggered a series of major
+                                developments intended to broaden and deepen the delivery of quality undergraduate and
+                                graduate business programs at AUB. Entirely new curricula were introduced for the BBA and
+                                MBA degrees in the fall of 2001. Both degrees were redesigned to follow leading trends in
+                                international business education. In the spring of 2004, OSB launched the Executive MBA
+                                (EMBA) program in response to the professional development needs of senior corporate
+                                leaders in the region.
+                            </p>
+                        </div>
                     </article>
                 </div>
 
