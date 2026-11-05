@@ -1,5 +1,7 @@
 /* ==========================================================
    About OSB page. Shared foundations live in main.css.
+   Inline <style> rules from about-osb.html are merged here
+   and take precedence where the two conflicted.
    ========================================================== */
 
 /* ---------- Programs ---------- */
@@ -28,28 +30,29 @@
   color: var(--color-text-muted);
 }
 
-/* ---------- Research (burgundy section, solid white cards) ---------- */
+/* ---------- Research: full-width intro, 5 compact cards on one row ---------- */
 .about-research__intro {
-  margin-bottom: var(--space-xl);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  max-width: 100%;
+  margin-bottom: var(--space-md);
 }
 
 .about-research__intro .section-header {
   margin-bottom: 0;
 }
 
-.about-research__label {
-  margin-bottom: var(--space-md);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.78);
+.about-research__intro .prose p {
+  max-width: 100%;
 }
 
 .initiative-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: var(--space-md);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -58,71 +61,20 @@
   --card-lift-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
 
   display: flex;
-  min-height: 250px;
   flex-direction: column;
   justify-content: space-between;
-  grid-column: span 2;
-  padding: 2.25rem;
+  min-height: 82px;
+  padding: 1rem 0.85rem;
   color: var(--color-ink);
-  border-radius: var(--radius-lg);
-  background: var(--color-white);
-}
-
-.initiative-card:nth-child(n + 4) {
-  grid-column: span 3;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.08);
+  grid-column: auto;
 }
 
 .initiative-card svg {
-  width: 56px;
-  height: 56px;
+  width: 28px;
+  height: 28px;
   color: var(--color-primary);
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.5;
-}
-
-.initiative-card h3 {
-  margin: var(--space-lg) 0 0;
-  color: var(--color-ink);
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-/* ---------- Vision and mission (cards, plain section) ---------- */
-.vm-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-lg);
-}
-
-.vm-card {
-  position: relative;
-  overflow: hidden;
-  padding: 3rem;
-  border: 1px solid rgba(17, 17, 17, 0.14);
-  border-radius: var(--radius-lg);
-  background: var(--color-white);
-  --card-lift-shadow: var(--shadow-hover);
-}
-
-.vm-card__icon {
-  display: grid;
-  width: 76px;
-  height: 76px;
-  place-items: center;
-  margin-bottom: var(--space-md);
-  color: var(--color-white);
-  border-radius: 50%;
-  background: var(--color-primary);
-  box-shadow: var(--shadow-button);
-}
-
-.vm-card__icon svg {
-  width: 38px;
-  height: 38px;
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
@@ -130,49 +82,125 @@
   stroke-width: 1.6;
 }
 
-.vm-card__watermark {
-  position: absolute;
-  right: -40px;
-  bottom: -40px;
-  width: 240px;
-  height: 240px;
-  color: var(--color-primary);
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 0.6;
-  opacity: 0.1;
-  pointer-events: none;
+.initiative-card h3 {
+  margin: var(--space-sm) 0 0;
+  margin: auto;
+  color: var(--color-white);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
-.vm-card h3 {
-  margin-bottom: var(--space-sm);
+/* ---------- Vision and mission: image on top, text below ---------- */
+.vm-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.vm-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+  --card-lift-shadow: var(--shadow-hover);
+  transition:
+    transform var(--transition-base) var(--ease-out),
+    box-shadow var(--transition-base) var(--ease-out);
+}
+
+.vm-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.vm-card__image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: var(--color-primary-mid);
+}
+
+.vm-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out);
+}
+
+.vm-card:hover .vm-card__image img {
+  transform: scale(1.05);
+}
+
+.vm-card__body {
+  padding: 1.75rem 1.75rem 2rem;
+}
+
+.vm-card__body h3 {
+  margin: 0 0 0.6rem;
   color: var(--color-primary);
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
-.vm-card p {
-  position: relative;
-  max-width: 28ch;
-  font-size: clamp(1.5rem, 2.4vw, 2rem);
-  font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -0.015em;
+.vm-card__body p {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.55;
 }
 
-/* ---------- History timeline (burgundy section) ---------- */
+/* ---------- History timeline ---------- */
+.about-history {
+  position: relative;
+  overflow: hidden;
+  background: none;
+  color: var(--color-white);
+}
+
+.about-history::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1600&q=80");
+  background-position: center;
+  background-size: cover;
+  content: "";
+}
+
+.about-history::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.7);
+  content: "";
+}
+
+.about-history > .container {
+  position: relative;
+  z-index: 2;
+}
+
 .about-history .section-header {
   margin-bottom: var(--space-xl);
+}
+
+.about-history .section-header h2,
+.about-history .timeline__year strong,
+.about-history .timeline__year span {
+  color: var(--color-white);
 }
 
 .timeline {
   position: relative;
   display: grid;
-  gap: var(--space-lg);
+  gap: var(--space-md);
   list-style: none;
 }
 
@@ -182,8 +210,14 @@
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 2px;
-  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.55) 6%, rgba(255, 255, 255, 0.55) 94%, transparent);
+  width: 1.5px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.55) 6%,
+    rgba(255, 255, 255, 0.55) 94%,
+    transparent
+  );
   content: "";
   transform: translateX(-50%);
 }
@@ -201,29 +235,52 @@
   text-align: right;
 }
 
+.timeline__year strong {
+  display: block;
+  color: var(--color-white);
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.timeline__year span {
+  display: block;
+  margin-top: 0.4rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .timeline__dot {
   position: relative;
   z-index: 1;
   grid-column: 2;
   grid-row: 1;
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   margin-inline: auto;
   border-radius: 50%;
   background: var(--color-white);
-  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.2);
+  transition:
+    background 0.3s,
+    box-shadow 0.3s,
+    transform 0.3s;
 }
 
 .timeline__card {
   grid-column: 3;
   grid-row: 1;
-  padding: 1.35rem 1.6rem;
+  padding: 0.9rem 1.1rem;
   color: var(--color-ink);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   background: var(--color-white);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
-  font-size: 1.05rem;
-  line-height: 1.5;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  font-size: 0.88rem;
+  line-height: 1.4;
 }
 
 /* Alternate sides on desktop */
@@ -236,35 +293,27 @@
   grid-column: 1;
 }
 
-.timeline__year strong {
-  display: block;
-  color: var(--color-white);
-  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1;
-}
-
-.timeline__year span {
-  display: block;
-  margin-top: 0.4rem;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-/* Key milestones: bigger dot, bolder card */
+/* Key milestones */
 .timeline__item--key .timeline__dot {
-  width: 28px;
-  height: 28px;
-  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.25);
+  width: 14px;
+  height: 14px;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.28);
 }
 
 .timeline__item--key .timeline__card {
-  font-weight: 700;
-  box-shadow: inset 0 4px 0 var(--color-primary), 0 14px 30px rgba(0, 0, 0, 0.18);
+  box-shadow: inset 0 3px 0 var(--color-primary), 0 8px 18px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+}
+
+/* Only the hovered row's dot changes */
+.timeline__item:hover .timeline__dot {
+  background: var(--color-white);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.4);
+  transform: scale(1.15);
+}
+
+.timeline__item--key:hover .timeline__dot {
+  box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.5);
 }
 
 /* ---------- Story: horizontal cards with images ---------- */
@@ -342,7 +391,7 @@
   line-height: 1.7;
 }
 
-.story-card__body p+p {
+.story-card__body p + p {
   margin-top: 1rem;
 }
 
@@ -355,6 +404,10 @@
   .about-programs__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .initiative-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 1024px) {
@@ -364,11 +417,19 @@
 
   .initiative-card,
   .initiative-card:nth-child(n + 4) {
-    grid-column: span 1;
+    grid-column: auto;
   }
 
   .initiative-card:last-child {
     grid-column: span 2;
+  }
+
+  .vm-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-research__intro {
+    gap: var(--space-sm);
   }
 
   .story-card,
@@ -386,10 +447,6 @@
 }
 
 @media (max-width: 768px) {
-  .vm-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   .vm-card {
     padding: 2rem;
   }
@@ -433,17 +490,16 @@
 }
 
 @media (max-width: 640px) {
-  .about-programs__grid,
+  .about-programs__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .initiative-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .initiative-card,
   .initiative-card:last-child {
-    grid-column: span 1;
-  }
-
-  .initiative-card {
-    min-height: 200px;
-    padding: 1.75rem;
+    grid-column: auto;
   }
 }
