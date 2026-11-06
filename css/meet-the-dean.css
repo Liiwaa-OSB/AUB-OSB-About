@@ -3,13 +3,10 @@
    ========================================================== */
 
 /* ---------- Profile hero adjustments ---------- */
-/* The header now uses a lighter, more translucent burgundy
-   to feel like a hero rather than a solid block. */
+/* Solid burgundy gradient (no transparency on the primary colour). */
 .profile-hero {
   padding-block: var(--space-xl) var(--space-2xl);
-  background: linear-gradient(135deg, rgba(132, 1, 50, 0.88), rgba(95, 1, 38, 0.85));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }

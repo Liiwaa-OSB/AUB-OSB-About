@@ -1,7 +1,6 @@
 /* ==========================================================
    About OSB page. Shared foundations live in main.css.
-   Inline <style> rules from about-osb.html are merged here
-   and take precedence where the two conflicted.
+   (All styles live here; nothing is inline in the HTML.)
    ========================================================== */
 
 /* ---------- Programs ---------- */
@@ -83,7 +82,6 @@
 }
 
 .initiative-card h3 {
-  margin: var(--space-sm) 0 0;
   margin: auto;
   color: var(--color-white);
   font-size: 0.85rem;
@@ -447,10 +445,6 @@
 }
 
 @media (max-width: 768px) {
-  .vm-card {
-    padding: 2rem;
-  }
-
   .story-card__body {
     padding: 1.75rem;
   }

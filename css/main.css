@@ -2,7 +2,8 @@
   /* Brand */
   --color-primary: #840132;
   --color-primary-dark: #5f0126;
-  --color-primary-mid: rgba(132, 1, 50, 0.12);
+  --color-primary-mid: #f0e0e6;
+  /* solid light tint of the primary */
 
   /* Neutrals */
   --color-white: #fff;
@@ -45,7 +46,7 @@
   --shadow-hover:
     0 20px 48px rgba(0, 0, 0, 0.06),
     0 4px 12px rgba(0, 0, 0, 0.06);
-  --shadow-button: 0 4px 14px rgba(132, 1, 50, 0.3);
+  --shadow-button: 0 4px 14px rgba(0, 0, 0, 0.2);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: 0.18s;
   --transition-base: 0.3s;
@@ -308,7 +309,7 @@ section,
 .btn-primary:hover {
   transform: translateY(-2px);
   background: var(--color-primary-dark);
-  box-shadow: 0 8px 28px rgba(132, 1, 50, 0.38);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
 }
 
 .theme-dark .btn-primary {
@@ -362,7 +363,6 @@ section,
   height: 1px;
   background: currentColor;
   content: "";
-  opacity: 0.65;
 }
 
 .text-link:hover {
@@ -480,9 +480,10 @@ section,
 .inner-hero__content h1 {
   margin-bottom: 1.25rem;
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 5.5vw, 3.5rem);
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
   font-weight: 700;
   letter-spacing: -0.035em;
+  line-height: 1.1;
 }
 
 .inner-hero__content p {
@@ -834,7 +835,7 @@ section,
   padding: 0.7rem 1rem;
   color: var(--color-white);
   border-radius: var(--radius-pill);
-  background: rgba(61, 0, 25, 0.78);
+  background: #3d0019;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -930,7 +931,7 @@ section,
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(circle, rgb(132, 1, 50), transparent 70%);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   content: "";
 }
 
@@ -1408,7 +1409,7 @@ section,
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(105deg, rgba(15, 15, 20, 0.82), rgba(5,5,5, 0.7) 60%, rgba(50,50,50, 0.5));
+  background: linear-gradient(105deg, rgba(15, 15, 20, 0.82), rgba(5, 5, 5, 0.7) 60%, rgba(50, 50, 50, 0.5));
   content: "";
 }
 
@@ -1426,9 +1427,7 @@ section,
 .surface-dark {
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 88% 20%, rgba(132, 1, 50, 0.52), transparent 28%),
-    linear-gradient(135deg, rgba(15, 15, 20, 0.98), rgba(95, 1, 38, 0.92));
+  background: linear-gradient(135deg, var(--color-ink), var(--color-primary-dark));
 }
 
 .surface-dark>.container {
@@ -1665,4 +1664,61 @@ section,
     max-width: 340px;
     order: -1;
   }
+}
+
+/* ==========================================================
+   Keyboard focus (all links) + "link not set yet" markers
+   ========================================================== */
+a:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.theme-dark a:focus-visible {
+  outline-color: var(--color-white);
+}
+
+/* Links that don't point anywhere yet.
+   In the HTML they are written as:
+     <!-- TODO LINK: ... -->
+     <a class="link-todo" data-link-status="todo" href="#">...</a>
+   Visitors see a normal link/button. To SEE the unfinished links while
+   reviewing, open any page with  ?todo-links  at the end of the URL
+   (e.g. global-recognitions.html?todo-links). */
+.show-todo-links a[data-link-status="todo"],
+.show-todo-links a.link-todo {
+  padding: 0.1rem 0.4rem;
+  color: #1a1a1a;
+  border-radius: 4px;
+  outline: 2px dashed #b45309;
+  outline-offset: 2px;
+  background: #fde68a;
+}
+
+.show-todo-links a[data-link-status="todo"]::before,
+.show-todo-links a.link-todo::before {
+  content: "NO LINK";
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.1rem 0.4rem;
+  color: #fff;
+  border-radius: 3px;
+  background: #b45309;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  vertical-align: middle;
+}
+
+.show-todo-links a.link-todo.text-link::after {
+  display: none;
+}
+
+/* ---------- Placeholder logos (swap the image files later) ---------- */
+.logo-ph {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
