@@ -168,8 +168,8 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url("https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1600&q=80");
-  background-position: center;
+  background-image: url("../images/AUB-OSB-Independent-School-banner.png");
+  background-position: center 85%;
   background-size: cover;
   content: "";
 }
@@ -178,7 +178,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(20, 20, 20, 0.4);
   content: "";
 }
 

@@ -1408,7 +1408,7 @@ section,
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(105deg, rgba(15, 15, 20, 0.82), rgba(95, 1, 38, 0.7) 60%, rgba(132, 1, 50, 0.5));
+  background: linear-gradient(105deg, rgba(15, 15, 20, 0.82), rgba(5,5,5, 0.7) 60%, rgba(50,50,50, 0.5));
   content: "";
 }
 
