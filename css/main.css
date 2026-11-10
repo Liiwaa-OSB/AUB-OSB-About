@@ -1718,7 +1718,7 @@ a:focus-visible {
 /* ---------- Placeholder logos (swap the image files later) ---------- */
 .logo-ph {
   display: block;
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
   object-fit: contain;
 }
