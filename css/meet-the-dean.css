@@ -1,138 +1,197 @@
 /* ==========================================================
-   Meet the Dean page. Shared foundations live in main.css.
+   Dean's Welcome Page Styles
    ========================================================== */
 
-/* ---------- Profile hero adjustments ---------- */
-/* Solid burgundy gradient (no transparency on the primary colour). */
-.profile-hero {
-  padding-block: var(--space-xl) var(--space-2xl);
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+/* Layout Grid */
+.dean-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 350px) minmax(0, 1fr);
+  gap: var(--space-2xl);
+  align-items: start;
 }
 
-.profile-hero .inner-breadcrumb {
-  margin-bottom: var(--space-lg);
+/* Sidebar Profile Card */
+.dean-sidebar {
+  position: sticky;
+  top: calc(var(--space-xl) + 100px);
 }
 
-/* ---------- Pull quote ---------- */
-.dean-quote {
-  max-width: 800px;
-  margin-inline: auto;
-  padding: var(--space-lg) var(--space-xl);
+.profile-card {
   background: var(--color-white);
-  border-radius: var(--radius-md);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
-  border-left: 4px solid var(--color-primary);
-  text-align: left;
+  overflow: hidden;
 }
 
-.dean-quote p {
-  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  line-height: 1.5;
-  color: var(--color-ink);
-  margin-bottom: var(--space-sm);
+.profile-card__image-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--color-surface-muted);
+  overflow: hidden;
 }
 
-.dean-quote figcaption {
+.profile-card__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.profile-card__details {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.profile-group__title {
+  margin: 0 0 0.3rem;
   color: var(--color-primary);
-  font-size: 0.9rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-/* ---------- Message card ---------- */
-.dean-message {
-  padding: 2.25rem;
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-}
-
-.dean-message p {
-  color: var(--color-text-muted);
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-.dean-message footer {
-  margin-top: var(--space-sm);
+.profile-group p {
+  margin: 0;
   color: var(--color-ink);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Main Content */
+.dean-main {
+  padding-top: var(--space-sm);
+}
+
+/* Quote */
+.dean-quote {
+  margin: 0 0 var(--space-xl);
+  padding: 0 0 0 var(--space-md);
+  border-left: 4px solid var(--color-primary);
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* Prose adjustments */
+.dean-prose p {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+}
+
+.dean-greeting {
+  font-size: 1.2rem !important;
+  color: var(--color-ink) !important;
   font-weight: 600;
 }
 
-/* ---------- Role section layout fix ---------- */
-/* Align items to the top and give the right column a slight
-   visual weight to balance the two columns. */
-.dean-role .layout-split {
-  align-items: start;
-  gap: var(--space-xl);
-}
-
-.dean-role .layout-split > div {
+/* Signature */
+.dean-signature {
   display: flex;
   flex-direction: column;
+  margin: var(--space-md) 0;
 }
 
-/* Remove the awkward empty space by making the left column
-   content stretch naturally with the right column height. */
-.dean-role .layout-split > div:first-child {
-  justify-content: flex-start;
+.dean-signature__name {
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
-.dean-role .section-header {
-  margin-bottom: var(--space-md);
+.dean-signature__title {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
 }
 
-/* ---------- Achievements ---------- */
-.dean-card {
-  padding: 2.25rem;
+/* Biography */
+.dean-bio {
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(17, 17, 17, 0.1);
 }
 
-.dean-card .content-card-title {
-  margin-bottom: var(--space-sm);
-  font-size: 1.4rem;
+.dean-bio__title {
+  margin: 0 0 var(--space-md);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
-.dean-card .content-card-copy {
-  font-size: 1.02rem;
+.dean-bio p {
+  font-size: 1.05rem;
   line-height: 1.7;
+  color: var(--color-text-muted);
 }
 
-/* ---------- Leading OSB forward ---------- */
-.dean-forward .prose {
-  --section-muted-text: rgba(255, 255, 255, 0.84);
-}
+/* ==========================================================
+   Responsive
+   ========================================================== */
 
-/* ---------- Responsive ---------- */
+/* Tablet */
 @media (max-width: 1024px) {
-  .dean-quote {
-    padding: var(--space-md) var(--space-lg);
+  .dean-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .dean-sidebar {
+    position: static;
+  }
+
+  .profile-card {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    align-items: center;
+  }
+
+  .profile-card__image-wrap {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .profile-card__details {
+    padding: var(--space-lg);
+    gap: var(--space-sm);
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
-  .dean-role .layout-split {
-    gap: var(--space-lg);
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .profile-card__image-wrap {
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+
+  .profile-card__image-wrap img {
+    object-position: center 20%;
   }
 
   .dean-quote {
-    padding: var(--space-md);
+    font-size: 1.25rem;
+    padding-left: var(--space-sm);
   }
 
-  .dean-message,
-  .dean-card {
-    padding: 1.5rem;
+  .dean-prose p {
+    font-size: 1.02rem;
   }
-}
 
-@media (max-width: 580px) {
-  .dean-message,
-  .dean-card {
-    padding: 1.5rem;
+  .dean-signature__name {
+    font-size: 1.3rem;
   }
 }

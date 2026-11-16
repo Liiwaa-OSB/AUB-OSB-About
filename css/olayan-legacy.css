@@ -1,31 +1,189 @@
 /* ==========================================================
-   The Olayan Legacy page. Shared foundations live in main.css.
+   Suliman S. Olayan Page Styles
    ========================================================== */
 
-/* ---------- Philanthropy ---------- */
-.legacy-foundation {
-  padding: 2.25rem;
+/* Layout Grid */
+.olayan-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 350px) minmax(0, 1fr);
+  gap: var(--space-2xl);
+  align-items: start;
 }
 
-.legacy-foundation .content-card-title {
-  margin-bottom: 0.4rem;
-  font-size: 1.4rem;
+/* Sidebar Profile Card */
+.olayan-sidebar {
+  position: sticky;
+  top: calc(var(--space-xl) + 20px);
 }
 
-.legacy-foundation .content-card-copy {
-  margin-bottom: var(--space-md);
-  font-size: 1rem;
+.profile-card {
+  background: var(--color-white);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
 }
 
-/* ---------- The building ---------- */
-.legacy-building__facts {
-  max-width: 620px;
-  margin-top: var(--space-lg);
+.profile-card__image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--color-primary-mid);
+  overflow: hidden;
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 580px) {
-  .legacy-foundation {
-    padding: 1.5rem;
+.profile-card__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Optional styling for profile fallback if image is missing */
+.profile-card__image-wrap::after {
+  content: "O";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 6rem;
+  font-weight: 800;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.profile-card__image-wrap img {
+  position: relative;
+  z-index: 1;
+}
+
+.profile-card__details {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.profile-group__title {
+  margin: 0 0 0.3rem;
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.profile-group p {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Main Content */
+.olayan-main {
+  padding-top: var(--space-sm);
+}
+
+.olayan-section {
+  margin-bottom: var(--space-xl);
+}
+
+.olayan-section:last-child {
+  margin-bottom: 0;
+}
+
+.olayan-section h2 {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.olayan-prose p {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+}
+
+/* Callout Box for the Legacy Section */
+.olayan-callout {
+  margin-top: var(--space-md);
+  padding: 1.5rem 1.75rem;
+  background: var(--color-white);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.olayan-callout p {
+  margin: 0;
+  color: var(--color-ink) !important;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .olayan-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  .olayan-sidebar {
+    position: static;
+  }
+
+  .profile-card {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    align-items: center;
+  }
+
+  .profile-card__image-wrap {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .profile-card__details {
+    padding: var(--space-lg);
+    gap: var(--space-sm);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .profile-card__image-wrap {
+    aspect-ratio: 4 / 5;
+    height: auto;
+    max-height: 400px;
+  }
+
+  .olayan-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .olayan-prose p {
+    font-size: 1.02rem;
+  }
+  
+  .olayan-callout {
+    padding: 1.25rem;
   }
 }

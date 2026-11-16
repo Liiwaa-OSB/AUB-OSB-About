@@ -1722,3 +1722,152 @@ a:focus-visible {
   height: 100%;
   object-fit: contain;
 }
+
+/* ==========================================================
+   "Ready to join OSB?" CTA band
+   Burgundy background, text left, single action right.
+   ========================================================== */
+.join-cta {
+  padding-block: var(--space-xl);
+  color: var(--color-white);
+  background: var(--color-primary);
+}
+
+.join-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.join-cta__title {
+  margin: 0 0 0.35rem;
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.join-cta__copy {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.join-cta__actions {
+  flex: 0 0 auto;
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* Responsive: stack the button below the text on small screens */
+@media (max-width: 768px) {
+  .join-cta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .join-cta__actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .join-cta__actions .btn {
+    width: 100%;
+  }
+}
+
+
+/*********************
+* Sticky Buttons
+**********************/
+/* ===== STICKY CTA BUTTONS ===== */
+.sticky-cta {
+  position: fixed;
+  bottom: calc(30px + env(safe-area-inset-bottom, 0px));
+  right: calc(30px + env(safe-area-inset-right, 0px));
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sticky-cta__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.sticky-cta__btn:hover {
+  background-color: var(--color-primary-dark);
+  transform: scale(1.05);
+}
+
+.sticky-cta__icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  stroke: currentColor;
+  display: block;
+}
+
+.sticky-cta__label {
+  position: absolute;
+  right: 100%;
+  margin-right: 12px;
+  background: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sticky-cta__btn:hover .sticky-cta__label {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .sticky-cta__label {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .sticky-cta {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    right: calc(16px + env(safe-area-inset-right, 0px));
+    gap: 10px;
+  }
+
+  .sticky-cta__btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .sticky-cta__icon {
+    width: 18px;
+    height: 18px;
+  }
+}

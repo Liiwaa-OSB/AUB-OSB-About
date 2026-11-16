@@ -1,0 +1,247 @@
+/* ==========================================================
+   History Page Styles
+   ========================================================== */
+
+/* ---------- Timeline Section ---------- */
+.history-timeline-section {
+  position: relative;
+  padding-block: var(--space-2xl);
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+.history-timeline-section::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("../images/AUB-OSB-Independent-School-banner.png");
+  background-position: center 85%;
+  background-size: cover;
+  content: "";
+}
+
+.history-timeline-section::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0,0,0, 0.25);
+  content: "";
+}
+
+.history-timeline-section > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.history-timeline-section .section-header {
+  margin-bottom: var(--space-xl);
+}
+
+.history-timeline-section .section-header h2,
+.history-timeline-section .timeline__year strong,
+.history-timeline-section .timeline__year span {
+  color: var(--color-white);
+}
+
+.history-timeline-section .section-header .eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Timeline Grid */
+.timeline {
+  position: relative;
+  display: grid;
+  gap: var(--space-md);
+  margin-inline: auto;
+  list-style: none;
+}
+
+/* Central Spine */
+.timeline::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1.5px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.55) 6%,
+    rgba(255, 255, 255, 0.55) 94%,
+    transparent
+  );
+  content: "";
+  transform: translateX(-50%);
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr);
+  column-gap: var(--space-md);
+  align-items: center;
+}
+
+/* Year */
+.timeline__year {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: right;
+}
+
+.timeline__year strong {
+  display: block;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.timeline__year span {
+  display: block;
+  margin-top: 0.3rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Dot */
+.timeline__dot {
+  position: relative;
+  z-index: 1;
+  grid-column: 2;
+  grid-row: 1;
+  width: 12px;
+  height: 12px;
+  margin-inline: auto;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+  transition:
+    background 0.3s,
+    box-shadow 0.3s,
+    transform 0.3s;
+}
+
+/* Card */
+.timeline__card {
+  grid-column: 3;
+  grid-row: 1;
+  padding: 1.25rem 1.5rem;
+  color: var(--color-ink);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.timeline__card h3 {
+  margin: 0 0 0.4rem;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.timeline__card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Alternate Sides (Even items) */
+.timeline__item:nth-child(even) .timeline__year {
+  grid-column: 3;
+  text-align: left;
+}
+
+.timeline__item:nth-child(even) .timeline__card {
+  grid-column: 1;
+}
+
+/* Key Milestones */
+.timeline__item--key .timeline__dot {
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.28);
+}
+
+.timeline__item--key .timeline__card {
+  box-shadow: inset 0 3px 0 var(--color-primary), 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effects */
+.timeline__item:hover .timeline__dot {
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.4);
+  transform: scale(1.15);
+}
+
+/* ---------- OSB Today Section ---------- */
+.history-today__inner {
+  max-width: 900px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.history-today .section-header {
+  margin-bottom: var(--space-md);
+}
+
+.history-today .section-header .eyebrow {
+  justify-content: center;
+}
+
+.history-today__text {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+
+@media (max-width: 768px) {
+  .history-timeline-section {
+    padding-block: var(--space-xl);
+  }
+
+  /* Shift spine to the left */
+  .timeline::before {
+    left: 13px;
+    transform: none;
+  }
+
+  .timeline__item,
+  .timeline__item:nth-child(even) {
+    grid-template-columns: 28px minmax(0, 1fr);
+    column-gap: var(--space-md);
+    align-items: start;
+  }
+
+  .timeline__dot {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    margin-top: 0.5rem;
+  }
+
+  .timeline__year,
+  .timeline__item:nth-child(even) .timeline__year {
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  .timeline__card,
+  .timeline__item:nth-child(even) .timeline__card {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 1.15rem;
+  }
+
+  .history-today__text {
+    font-size: 1.05rem;
+  }
+}
