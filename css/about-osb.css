@@ -3,76 +3,314 @@
    ========================================================== */
 
 /* ---------- Hero badges (EQUIS + AACSB, white) ---------- */
-/* Mirrors the .gr-hero__badges pattern from global-recognitions.css
-   so the two pages stay visually consistent. */
+/* ==========================================================
+   About OSB — HERO (new pattern, prefixed to avoid clashes)
+   Mirrors the MBA hero: full-height, overlay + grain,
+   split two-column layout, translucent panel on the right.
+   ========================================================== */
 
-.about-hero__content {
+.abt-hero {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: var(--space-lg);
-  max-width: none;
+  align-items: center;
+  min-height: max(680px, calc(100svh - var(--header-offset)));
+  padding-block: clamp(4rem, 8vw, 7rem);
+  overflow: hidden;
+  color: var(--color-white);
+  background-color: var(--color-ink);
 }
 
-.about-hero__content h1 {
-  flex: 1 1 520px;
-  margin-bottom: 0;
+.abt-hero__overlay,
+.abt-hero__grain {
+  position: absolute;
+  inset: 0;
 }
 
-.about-hero__badges {
-  display: flex;
-  flex: 0 0 auto;
-  gap: var(--space-xs);
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* Photo + gradient in one layer (matches the homepage pattern) */
+.abt-hero__overlay {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.55)),
+    url("../images/AUB-OSB-Inner-View-banner.jpg") center center / cover no-repeat;
 }
 
-.about-hero__badges li {
+.abt-hero__grain {
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+.abt-hero__body {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* ---------- Two-column layout ---------- */
+.abt-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.abt-hero__content {
+  max-width: 720px;
+}
+
+/* ---------- Left column ---------- */
+.abt-hero__kicker {
+  --abt-anim-delay: 0.15s;
+
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+  padding: 0.45rem 0.9rem;
+  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-pill, 999px);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.abt-hero__headline {
+  --abt-anim-delay: 0.3s;
+
+  margin: 0 0 1.5rem;
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.4vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.abt-hero__headline em {
+  color: rgba(255, 255, 255, 0.75);
+  font-style: italic;
+}
+
+.abt-hero__sub {
+  --abt-anim-delay: 0.45s;
+
+  max-width: 700px;
+  margin: 0 0 2.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.32rem;
+  line-height: 1.55;
+}
+
+.abt-hero__actions {
+  --abt-anim-delay: 0.6s;
+
   display: flex;
   align-items: center;
-  height: 120px;
+  flex-wrap: wrap;
+  gap: 0.9rem;
 }
 
-.about-hero__badges .logo-ph {
-  height: 100%;
-  width: auto;
-  max-width: 240px;
+.abt-hero__kicker,
+.abt-hero__headline,
+.abt-hero__sub,
+.abt-hero__actions {
+  opacity: 0;
+  animation: abt-hero-fade-up 0.8s var(--ease-out, ease-out) forwards;
+  animation-delay: var(--abt-anim-delay, 0s);
+}
+
+/* ---------- Right column: At a glance ---------- */
+.abt-hero__aside {
+  opacity: 1;
+}
+
+.abt-hero__aside-panel {
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius-xl, 1.25rem);
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 30px 70px -35px rgba(0, 0, 0, 0.6);
+
+  opacity: 0;
+  animation: abt-hero-fade-up 0.9s var(--ease-out, ease-out) 0.5s forwards;
+}
+
+.abt-hero__aside-title {
+  margin: 0 0 1.25rem;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.abt-hero__aside-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.abt-hero__stat {
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-md, 0.75rem);
+  background: rgba(255, 255, 255, 0.06);
+  transition:
+    background-color var(--transition-base, 0.25s ease),
+    border-color var(--transition-base, 0.25s ease),
+    transform var(--transition-base, 0.25s ease);
+}
+
+.abt-hero__stat:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.abt-hero__stat-value {
+  margin-bottom: 0.3rem;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.abt-hero__stat-label {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+/* Accreditation logos inside the panel */
+.abt-hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+}
+
+.abt-hero__badges li {
+  display: flex;
+  align-items: center;
+  width: calc(50% - 0.5rem);
+}
+
+.abt-hero__badges .logo-ph {
+  height: auto;
+  width: 100%;
+  max-height: 160px;
   object-fit: contain;
 }
 
-@media (max-width: 920px) {
-  .about-hero__content {
-    flex-direction: column;
+/* ---------- Motion ---------- */
+@keyframes abt-hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   HERO — RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1100px) {
+  .abt-hero {
     align-items: flex-start;
+    min-height: auto;
+    padding-block: clamp(5rem, 10vw, 7rem) clamp(3.5rem, 8vw, 5rem);
   }
 
-  .about-hero__badges {
-    margin-top: var(--space-md);
+  .abt-hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 3rem);
   }
 
-  .about-hero__badges li {
-    height: 96px;
+  .abt-hero__content {
+    max-width: 100%;
+  }
+
+  .abt-hero__sub {
+    max-width: 640px;
+  }
+
+  .abt-hero__aside-panel {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 720px) {
+  .abt-hero__kicker {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+  }
+
+  .abt-hero__headline {
+    margin-bottom: 1.25rem;
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+  }
+
+  .abt-hero__sub {
+    margin-bottom: 1.75rem;
+    font-size: 0.95rem;
+  }
+
+  .abt-hero__aside-grid {
+    gap: 0.65rem;
+  }
+
+  .abt-hero__stat {
+    padding: 0.85rem 0.8rem;
+  }
+
+  .abt-hero__stat-value {
+    font-size: 1.05rem;
+  }
+
+  .abt-hero__stat-label {
+    font-size: 0.72rem;
   }
 }
 
 @media (max-width: 560px) {
-  .about-hero__badges li {
-    height: 76px;
+  .abt-hero__actions {
+    gap: 0.65rem;
+  }
+
+  .abt-hero__actions .btn {
+    width: 100%;
+  }
+
+  .abt-hero__aside-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
-/* ---------- Intro text (moved out of hero) ---------- */
-.about-hero-intro .prose {
-  max-width: 900px;
-  margin-inline: auto;
-}
+@media (prefers-reduced-motion: reduce) {
 
-@media (max-width: 768px) {
-  .about-hero-intro {
-    padding-block: var(--space-xl) 0;
+  .abt-hero__kicker,
+  .abt-hero__headline,
+  .abt-hero__sub,
+  .abt-hero__actions,
+  .abt-hero__aside {
+    opacity: 1;
+    animation: none;
   }
 }
 
@@ -269,7 +507,7 @@
 }
 
 /* ---------- Programs: grouped tile grid ---------- */
-.program-group + .program-group {
+.program-group+.program-group {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(17, 17, 17, 0.08);

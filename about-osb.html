@@ -109,42 +109,53 @@
     </div>
     <main id="main">
         <!-- HERO -->
-        <section class="inner-hero theme-dark">
-            <div class="inner-hero__background" aria-hidden="true">
-                <img class="inner-hero__image" src="images/AUB-OSB-Inner-View-banner.jpg" alt=""
-                    onerror="this.remove()" />
-            </div>
-            <div class="container inner-hero__container">
-                <nav aria-label="Breadcrumb" class="inner-breadcrumb">
-                    <span>OSB</span>
-                    <span aria-hidden="true">/</span>
-                    <span aria-current="page">About OSB</span>
-                </nav>
-                <div class="inner-hero__content about-hero__content">
-                    <h1>Transforming Business Thinking in the MENA Region</h1>
-                    <ul class="about-hero__badges" aria-label="Accreditations held">
-                        <li>
-                            <img class="logo-ph" src="images/logos/external/logo-equis-white.png" alt="EQUIS Accredited"
-                                width="240" height="120" loading="lazy" />
-                        </li>
-                        <li>
-                            <img class="logo-ph" src="images/logos/external/logo-aacsb-white.png" alt="AACSB Accredited"
-                                width="240" height="120" loading="lazy" />
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <section class="abt-hero">
+            <div class="abt-hero__overlay" aria-hidden="true"></div>
+            <div class="abt-hero__grain" aria-hidden="true"></div>
 
-        <!-- HERO INTRO TEXT (moved from hero) -->
-        <section class="about-hero-intro">
-            <div class="container">
-                <div class="prose reveal">
-                    <p>
-                        The Suliman S. Olayan School of Business brings more than a century of business education at
-                        the American University of Beirut into a modern, research-driven school, and is the first in
-                        Lebanon to hold both AACSB and EQUIS accreditation.
-                    </p>
+            <div class="abt-hero__body">
+                <div class="container">
+                    <div class="abt-hero__inner">
+
+                        <!-- LEFT: message -->
+                        <div class="abt-hero__content">
+                            <div class="abt-hero__kicker">
+                                About OSB · American University of Beirut
+                            </div>
+
+                            <h1 class="abt-hero__headline">
+                                <em>Transforming Business Thinking</em><br />
+                                In the MENA Region.
+                            </h1>
+
+                            <p class="abt-hero__sub">
+                                The Suliman S. Olayan School of Business brings more than a century of business
+                                education at the American University of Beirut into a modern, research-driven
+                                school — and is the first in Lebanon to hold both AACSB and EQUIS accreditation.
+                            </p>
+
+                            <div class="abt-hero__actions">
+                                <a class="btn btn-primary" href="#vision-mission">Explore OSB</a>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: at a glance -->
+                        <aside class="abt-hero__aside" aria-labelledby="abt-hero-aside-title">
+                            <div class="abt-hero__aside-panel">
+                                <ul class="abt-hero__badges" aria-label="Accreditations held">
+                                    <li>
+                                        <img class="logo-ph" src="images/logos/external/logo-equis-white.png"
+                                            alt="EQUIS Accredited" width="240" height="120" loading="lazy" />
+                                    </li>
+                                    <li>
+                                        <img class="logo-ph" src="images/logos/external/logo-aacsb-white.png"
+                                            alt="AACSB Accredited" width="240" height="120" loading="lazy" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </aside>
+
+                    </div>
                 </div>
             </div>
         </section>
@@ -154,16 +165,6 @@
             <div class="container">
                 <h2 class="sr-only">Vision and mission</h2>
                 <div class="vm-grid">
-                    <article class="vm-card reveal">
-                        <div class="vm-card__image">
-                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
-                                alt="Team collaborating" loading="lazy" />
-                        </div>
-                        <div class="vm-card__body">
-                            <h3>Our Vision</h3>
-                            <p>Transform business thinking in the MENA region.</p>
-                        </div>
-                    </article>
                     <article class="vm-card reveal reveal-delay-1">
                         <div class="vm-card__image">
                             <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
@@ -173,6 +174,16 @@
                             <h3>Our Mission</h3>
                             <p>Enable world-class business research, learning, and knowledge transfer from our
                                 authoritative anchor point within the MENA region.</p>
+                        </div>
+                    </article>
+                    <article class="vm-card reveal">
+                        <div class="vm-card__image">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                                alt="Team collaborating" loading="lazy" />
+                        </div>
+                        <div class="vm-card__body">
+                            <h3>Our Vision</h3>
+                            <p>Transform business thinking in the MENA region.</p>
                         </div>
                     </article>
                 </div>

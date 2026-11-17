@@ -14,9 +14,18 @@ const FACULTY_DEPTS = [
   "Management, Marketing & Entrepreneurship"
 ];
 
+const DEFAULT_PROFILE_IMAGE = "images/profile.png";
+
 function adminGroupsOf(p) {
   if (!p.admin) return [];
   return Array.isArray(p.admin.group) ? p.admin.group : [p.admin.group];
+}
+
+/* ==========================================
+   HELPER: Resolve image src with fallback
+   ========================================== */
+function resolveImage(p) {
+  return p.image && p.image.trim() ? p.image : DEFAULT_PROFILE_IMAGE;
 }
 
 /* ==========================================
@@ -75,7 +84,7 @@ function buildFilterUI(options, onFilterChange) {
    ========================================== */
 function renderAdminPage(container) {
   const list = people.filter(p => p.pages.includes("admin"));
-  
+
   // 1. Build Options
   const filterOptions = [{ label: "All", value: "all" }];
   ADMIN_GROUP_ORDER.forEach(group => {
@@ -98,21 +107,30 @@ function renderAdminPage(container) {
       const section = document.createElement("section");
       section.className = "people-group-section";
       section.innerHTML = `<h2>${group}</h2>`;
-      
+
       const grid = document.createElement("div");
       grid.className = "people-grid";
-      
+
       members.forEach(p => {
-        const card = document.createElement("div");
-        card.className = "person-card";
+        const isClickable = !!(p.profileUrl && p.profileUrl.trim());
+        const card = document.createElement(isClickable ? "a" : "div");
+        card.className = "person-card " + (isClickable ? "person-card--clickable" : "person-card--static");
+
+        if (isClickable) {
+          card.href = p.profileUrl;
+          card.target = "_blank";
+          card.rel = "noopener noreferrer";
+        }
+
         card.innerHTML = `
-          <img src="${p.image}" alt="${p.displayName}">
+          <img src="${resolveImage(p)}" alt="${p.displayName}" onerror="this.onerror=null;this.src='${DEFAULT_PROFILE_IMAGE}'">
           <h3>${p.displayName}</h3>
           <p class="title">${p.admin.title}</p>
           ${p.email ? `<a href="mailto:${p.email}" class="person-email">${p.email}</a>` : ""}
         `;
         grid.appendChild(card);
       });
+
       section.appendChild(grid);
       contentContainer.appendChild(section);
     });
@@ -129,7 +147,7 @@ function renderAdminPage(container) {
    ========================================== */
 function renderFacultyPage(container) {
   const list = people.filter(p => p.pages.includes("faculty"));
-  
+
   // 1. Build Options
   const filterOptions = [{ label: "All Faculty", value: "all" }];
   FACULTY_DEPTS.forEach(dept => {
@@ -153,33 +171,40 @@ function renderFacultyPage(container) {
 
         const section = document.createElement("section");
         section.className = "people-group-section";
-        
+
         if (activeFilter === "all") {
           section.innerHTML = `<h2>${dept}</h2>`;
         }
-        
+
         const sub = document.createElement("div");
         sub.className = "faculty-subgroup";
         sub.innerHTML = `<h3>${type === "full-time" ? "Full-Time" : "Part-Time"}</h3>`;
-        
+
         const grid = document.createElement("div");
         grid.className = "people-grid";
-        
+
         members.forEach(p => {
+          const isClickable = !!(p.profileUrl && p.profileUrl.trim());
           const card = document.createElement("div");
-          card.className = "person-card";
+          card.className = "person-card " + (isClickable ? "person-card--clickable" : "person-card--static");
+
+          const inner = `
+            <img src="${resolveImage(p)}" alt="${p.displayName}" onerror="this.onerror=null;this.src='${DEFAULT_PROFILE_IMAGE}'">
+            <h3>${p.displayName}</h3>
+          `;
+
           card.innerHTML = `
-            <a href="${p.profileUrl || '#'}">
-              <img src="${p.image}" alt="${p.displayName}">
-              <h3>${p.displayName}</h3>
-            </a>
+            ${isClickable
+              ? `<a href="${p.profileUrl}" class="person-card__link">${inner}</a>`
+              : `<div class="person-card__link person-card__link--static">${inner}</div>`
+            }
             <p class="title">${p.faculty.title}</p>
             ${p.research ? `<p class="research">${p.research}</p>` : ""}
             ${p.email ? `<a href="mailto:${p.email}" class="person-email">${p.email}</a>` : ""}
           `;
           grid.appendChild(card);
         });
-        
+
         sub.appendChild(grid);
         section.appendChild(sub);
         contentContainer.appendChild(section);

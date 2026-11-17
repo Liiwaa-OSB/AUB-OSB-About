@@ -177,12 +177,6 @@
 }
 
 /* ---------- OSB Today Section ---------- */
-.history-today__inner {
-  max-width: 900px;
-  margin-inline: auto;
-  text-align: center;
-}
-
 .history-today .section-header {
   margin-bottom: var(--space-md);
 }
