@@ -80,6 +80,11 @@ body {
   text-wrap: pretty;
 }
 
+body,
+p {
+  font-size: 1.05rem;
+}
+
 img,
 picture,
 svg,
@@ -245,7 +250,6 @@ section,
 .section-header h2 {
   margin: 0 0 var(--space-sm);
   color: var(--section-text, var(--color-ink));
-  font-family: var(--font-display);
   font-size: clamp(2rem, 3.5vw, 2.8rem);
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -254,13 +258,11 @@ section,
 .section-header p {
   margin: 0;
   color: var(--section-muted-text, inherit);
-  font-size: 1.05rem;
 }
 
 .content-card-title {
   margin: 0 0 0.55rem;
   color: var(--section-text, var(--color-ink));
-  font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 700;
 }
@@ -289,7 +291,7 @@ section,
   border: 0;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  font-size: 1.1rem;
+  
   font-weight: 600;
   letter-spacing: 0.02em;
   transition:
@@ -479,7 +481,6 @@ section,
 
 .inner-hero__content h1 {
   margin-bottom: 1.25rem;
-  font-family: var(--font-display);
   font-size: clamp(2.4rem, 5vw, 3.5rem);
   font-weight: 700;
   letter-spacing: -0.035em;
@@ -551,7 +552,6 @@ section,
 
 .image-card__title {
   margin: 0 0 0.5rem;
-  font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 700;
 }
@@ -663,7 +663,6 @@ section,
   padding-top: 0.45rem;
 
   color: var(--color-ink);
-  font-family: var(--font-display);
   font-size: 1.85rem;
   font-weight: 700;
   line-height: 1;
@@ -699,7 +698,6 @@ section,
 .event-card__title {
   margin: 0 0 0.85rem;
 
-  font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 700;
   line-height: 1.25;
@@ -905,7 +903,6 @@ section,
 .mba__number {
   padding-top: 0.1rem;
   color: var(--color-primary);
-  font-family: var(--font-display);
   font-size: 2.2rem;
   font-weight: 800;
   line-height: 1;
@@ -964,7 +961,6 @@ section,
 
 .cta-section h2 {
   margin: 0 0 1.1rem;
-  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 700;
   line-height: 1.12;
@@ -1419,7 +1415,7 @@ section,
 
 .inner-hero__content p {
   max-width: 760px;
-  font-size: 1.1rem;
+  
   line-height: 1.6;
 }
 
@@ -1441,7 +1437,6 @@ section,
 }
 
 .prose p {
-  font-size: 1.05rem;
   line-height: 1.7;
 }
 
@@ -1473,7 +1468,6 @@ section,
 .stat__value {
   display: block;
   color: var(--color-primary);
-  font-family: var(--font-display);
   font-size: clamp(2rem, 3.4vw, 2.8rem);
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -1620,7 +1614,6 @@ section,
 }
 
 .profile-hero h1 {
-  font-family: var(--font-display);
   font-size: clamp(2.4rem, 5vw, 3.75rem);
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -1743,7 +1736,6 @@ a:focus-visible {
 .join-cta__title {
   margin: 0 0 0.35rem;
   color: var(--color-white);
-  font-family: var(--font-display);
   font-size: clamp(1.5rem, 2.6vw, 2rem);
   font-weight: 700;
   letter-spacing: -0.01em;

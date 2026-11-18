@@ -108,7 +108,6 @@
 }
 
 .gr-feature__value {
-  font-family: var(--font-display);
   font-size: clamp(4.5rem, 8vw, 6.5rem);
   font-weight: 800;
   letter-spacing: -0.045em;
@@ -116,9 +115,6 @@
   white-space: nowrap;
 }
 
-.gr-feature__value--word {
-  font-size: clamp(3rem, 5vw, 4rem);
-}
 
 .gr-feature__scope {
   margin-top: var(--space-md);
@@ -137,7 +133,6 @@
 
 .gr-feature__source {
   margin-top: 0.4rem;
-  font-size: 1rem;
 }
 
 .gr-feature .gr-chip {
@@ -177,7 +172,6 @@
 
 .gr-row__value {
   color: var(--color-primary);
-  font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -200,7 +194,6 @@
 }
 
 .gr-row__info strong {
-  font-size: 1rem;
   font-weight: 700;
   line-height: 1.3;
 }

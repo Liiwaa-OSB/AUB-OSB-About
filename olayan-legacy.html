@@ -44,12 +44,19 @@
                     <li class="osb-nav-item mba-nav-item">
                         <a href="about-osb.html" id="about-osb-link">Overview</a>
                     </li>
-                    <li class="osb-nav-item mba-nav-item">
-                        <a href="meet-the-dean.html" id="meet-dean-link">Dean's Welcome</a>
+
+                    <!-- Leadership & Governance with SUBMENU -->
+                    <li class="osb-nav-item mba-nav-item has-submenu">
+                        <a href="governance.html" id="governance-link" aria-haspopup="true" aria-expanded="false">
+                            Leadership &amp; Governance
+                        </a>
+                        <ul class="osb-submenu">
+                            <li><a href="meet-the-dean.html" id="meet-dean-link">Dean's Welcome</a></li>
+                            <li><a href="faculty.html" id="faculty-link">Faculty</a></li>
+                            <li><a href="administration.html" id="administration-link">Administration</a></li>
+                        </ul>
                     </li>
-                    <li class="osb-nav-item mba-nav-item">
-                        <a href="governance.html" id="governance-link">Leadership &amp; Governance</a>
-                    </li>
+
                     <li class="osb-nav-item mba-nav-item">
                         <a href="history.html" id="history-link">Our History</a>
                     </li>
@@ -58,6 +65,9 @@
                     </li>
                     <li class="osb-nav-item mba-nav-item">
                         <a href="global-recognitions.html" id="recognitions-link">Accreditations &amp; Rankings</a>
+                    </li>
+                    <li class="osb-nav-item mba-nav-item">
+                        <a href="#" id="strategic-planning-link">Strategic Planning</a>
                     </li>
                     <li class="osb-nav-item mba-nav-item">
                         <a href="work-at-osb.html" id="work-link">Work at OSB</a>
@@ -78,7 +88,6 @@
 
         </div>
     </header>
-
     <!-- MOBILE OVERLAY -->
     <div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-modal="true" aria-label="Main menu"
         aria-hidden="true" inert>
@@ -93,21 +102,42 @@
             <nav aria-label="Mobile navigation">
                 <ul class="mobile-nav">
                     <li><a class="mobile-nav-link" href="about-osb.html" id="mobile-about-osb-link">Overview</a></li>
-                    <li><a class="mobile-nav-link" href="meet-the-dean.html" id="mobile-meet-dean-link">Dean's
-                            Welcome</a></li>
-                    <li><a class="mobile-nav-link" href="governance.html" id="mobile-governance-link">Leadership &amp;
-                            Governance</a></li>
+
+                    <!-- Leadership & Governance submenu (mobile) -->
+                    <li class="has-submenu open">
+                        <div class="mobile-nav-row">
+                            <a class="mobile-nav-link" href="governance.html" id="mobile-governance-link">
+                                Leadership &amp; Governance
+                            </a>
+                            <button class="submenu-arrow" type="button"
+                                aria-label="Toggle Leadership &amp; Governance submenu" aria-expanded="true"
+                                aria-controls="mobile-governance-submenu">
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                    aria-hidden="true">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <ul class="mobile-submenu" id="mobile-governance-submenu">
+                            <li><a class="mobile-nav-link" href="meet-the-dean.html" id="mobile-meet-dean-link">Dean's
+                                    Welcome</a></li>
+                            <li><a class="mobile-nav-link" href="faculty.html" id="mobile-faculty-link">Faculty</a></li>
+                            <li><a class="mobile-nav-link" href="administration.html"
+                                    id="mobile-administration-link">Administration</a></li>
+                        </ul>
+                    </li>
                     <li><a class="mobile-nav-link" href="history.html" id="mobile-history-link">Our History</a></li>
                     <li><a class="mobile-nav-link" href="olayan-legacy.html" id="mobile-olayan-link">Suliman S.
                             Olayan</a></li>
                     <li><a class="mobile-nav-link" href="global-recognitions.html"
                             id="mobile-recognitions-link">Accreditations &amp; Rankings</a></li>
+                    <li><a class="mobile-nav-link" href="#" id="mobile-strategic-planning-link">Strategic Planning</a>
+                    </li>
                     <li><a class="mobile-nav-link" href="work-at-osb.html" id="mobile-work-link">Work at OSB</a></li>
                 </ul>
             </nav>
         </div>
     </div>
-
 
     <main id="main">
         <!-- HERO -->

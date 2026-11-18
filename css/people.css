@@ -32,7 +32,6 @@
     border-radius: var(--radius-pill);
     background: var(--color-white);
     color: var(--color-text-muted);
-    font-family: var(--font-body);
     font-size: 0.95rem;
     font-weight: 600;
     white-space: nowrap;
@@ -67,7 +66,6 @@
     border-radius: var(--radius-sm);
     background-color: var(--color-white);
     color: var(--color-ink);
-    font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -99,7 +97,6 @@
 .people-group-section>h2 {
     margin: 0 0 var(--space-lg);
     color: var(--color-ink);
-    font-family: var(--font-display);
     font-size: 1.8rem;
     font-weight: 700;
 }
@@ -111,8 +108,7 @@
 .faculty-subgroup>h3 {
     margin: 0 0 var(--space-md);
     color: var(--color-primary);
-    font-family: var(--font-display);
-    font-size: 1.1rem;
+    
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -211,7 +207,6 @@
 .person-card h3 {
     margin: 0 0 0.4rem;
     color: var(--color-ink);
-    font-family: var(--font-display);
     font-size: 1.15rem;
     font-weight: 700;
     line-height: 1.3;

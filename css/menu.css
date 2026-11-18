@@ -262,3 +262,135 @@ body.menu-open {
         transition: none;
     }
 }
+
+
+/* ========== DESKTOP SUBMENU ========== */
+
+.osb-nav-item.has-submenu {
+    position: relative;
+}
+
+.osb-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: #ffffff;
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-top: 2px solid var(--color-primary, #840132);
+}
+
+.osb-nav-item.has-submenu:hover .osb-submenu,
+.osb-nav-item.has-submenu:focus-within .osb-submenu {
+    display: block;
+}
+
+.osb-submenu li {
+    list-style: none;
+}
+
+.osb-submenu li a {
+    display: block;
+    padding: 0.6rem 1.2rem;
+    color: #111;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+    transition: color .2s ease, background .2s ease;
+}
+
+/* Hover — primary text */
+.osb-submenu li a:hover {
+    color: var(--color-primary, #840132);
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.osb-submenu li a:focus-visible {
+    outline: 2px solid var(--color-primary, #840132);
+    outline-offset: -2px;
+    color: var(--color-primary, #840132);
+}
+
+/* Active / current page — primary text + indicator */
+.osb-submenu li a.is-active {
+    color: var(--color-primary, #840132);
+    font-weight: 800;
+    background: rgba(132, 1, 50, 0.06);
+    position: relative;
+}
+
+.osb-submenu li a.is-active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--color-primary, #840132);
+}
+
+
+/* ========== MOBILE SUBMENU ========== */
+
+/* Submenu visible by default on mobile */
+.mobile-nav .has-submenu > .mobile-submenu {
+    display: block;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Parent row: keeps link clickable, arrow sits beside it */
+.mobile-nav .has-submenu > .mobile-nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
+
+.mobile-nav .has-submenu > .mobile-nav-row > a.mobile-nav-link {
+    flex: 1 1 auto;
+    border-bottom: 0; /* border moves to the row wrapper */
+}
+
+/* Arrow icon beside the parent element */
+.mobile-nav .has-submenu > .mobile-nav-row > .submenu-arrow {
+    flex: 0 0 auto;
+    background: none;
+    border: 0;
+    padding: 1rem .75rem;
+    color: #fff;
+    cursor: pointer;
+    line-height: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-nav .has-submenu > .mobile-nav-row > .submenu-arrow svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+}
+
+.mobile-nav .has-submenu.open > .mobile-nav-row > .submenu-arrow svg {
+    transform: rotate(180deg);
+}
+
+/* Nested submenu links: no bold, left aligned */
+.mobile-nav .mobile-submenu .mobile-nav-link {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 400;          /* no bold */
+    text-align: left;          /* text left */
+    text-transform: none;      /* optional: drop uppercase for readability */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}

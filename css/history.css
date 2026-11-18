@@ -138,8 +138,6 @@
 .timeline__card h3 {
   margin: 0 0 0.4rem;
   color: var(--color-ink);
-  font-family: var(--font-display);
-  font-size: 1.05rem;
   font-weight: 700;
   line-height: 1.3;
 }

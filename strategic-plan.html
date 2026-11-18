@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <title>Strategic Plan | AUB Suliman S. Olayan School of Business</title>
+    <link href="images/logos/favicon.ico" rel="icon" type="image/x-icon" />
+    <meta name="description"
+        content="Discover OSB's strategic plan: our mission, vision, values, and the five strategic imperatives guiding our future." />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet" />
+
+    <!-- Site styles -->
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/menu.css" rel="stylesheet" />
+
+    <!-- Page specific styles -->
+    <link href="css/strategic-plan.css" rel="stylesheet" />
+
+    <noscript>
+        <style>
+            .sp-card__inner {
+                display: block;
+            }
+
+            .sp-card__face {
+                min-height: 0;
+            }
+
+            .sp-card__front {
+                min-height: 300px;
+            }
+
+            .sp-card__back {
+                transform: none;
+                margin-top: 0.75rem;
+            }
+        </style>
+    </noscript>
+
+    <!-- Site Logic -->
+    <script defer src="js/main.js"></script>
+    <script defer src="js/menu.js"></script>
+</head>
+
+<body class="people-page">
+    <header class="nav-main-header">
+        <div class="nav-main-container">
+
+            <!-- LOGO -->
+            <div class="nav-logo">
+                <a href="https://www.aub.edu.lb/osb/Pages/default.aspx">
+                    <img src="images/logos/AUB+OSB-Merged-Logo-white.png" alt="AUB OSB Logo" />
+                </a>
+            </div>
+
+            <!-- DESKTOP NAVIGATION -->
+            <nav class="nav-osb-links" aria-label="Main navigation">
+                <ul class="osb-nav">
+                    <li class="osb-nav-item mba-nav-item">
+                        <a href="about-osb.html" id="about-osb-link">Overview</a>
+                    </li>
+
+                    <!-- Leadership & Governance with SUBMENU -->
+                    <li class="osb-nav-item mba-nav-item has-submenu">
+                        <a href="governance.html" id="governance-link" aria-haspopup="true" aria-expanded="false">
+                            Leadership &amp; Governance
+                        </a>
+                        <ul class="osb-submenu">
+                            <li><a href="meet-the-dean.html" id="meet-dean-link">Dean's Welcome</a></li>
+                            <li><a href="faculty.html" id="faculty-link">Faculty</a></li>
+                            <li><a href="administration.html" id="administration-link">Administration</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="osb-nav-item mba-nav-item">
+                        <a href="history.html" id="history-link">Our History</a>
+                    </li>
+                    <li class="osb-nav-item mba-nav-item">
+                        <a href="olayan-legacy.html" id="olayan-link">Suliman S. Olayan</a>
+                    </li>
+                    <li class="osb-nav-item mba-nav-item">
+                        <a href="global-recognitions.html" id="recognitions-link">Accreditations &amp; Rankings</a>
+                    </li>
+                    <li class="osb-nav-item mba-nav-item">
+                        <a href="#" id="strategic-planning-link">Strategic Planning</a>
+                    </li>
+                    <li class="osb-nav-item mba-nav-item">
+                        <a href="work-at-osb.html" id="work-link">Work at OSB</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button class="mobile-burger-inline" id="mobileBurgerBtn" type="button" aria-label="Open menu"
+                aria-controls="mobileOverlay" aria-expanded="false">
+                <svg fill="none" height="28" width="28" viewBox="0 0 24 24" stroke="white" stroke-width="2"
+                    aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+        </div>
+    </header>
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-modal="true" aria-label="Main menu"
+        aria-hidden="true" inert>
+        <div class="mobile-overlay-content">
+            <button class="mobile-close" id="closeOverlayBtn" type="button" aria-label="Close menu">
+                <svg fill="none" height="28" width="28" viewBox="0 0 24 24" stroke="white" stroke-width="2"
+                    aria-hidden="true">
+                    <line x1="5" y1="5" x2="19" y2="19"></line>
+                    <line x1="19" y1="5" x2="5" y2="19"></line>
+                </svg>
+            </button>
+            <nav aria-label="Mobile navigation">
+                <ul class="mobile-nav">
+                    <li><a class="mobile-nav-link" href="about-osb.html" id="mobile-about-osb-link">Overview</a></li>
+
+                    <!-- Leadership & Governance submenu (mobile) -->
+                    <li class="has-submenu open">
+                        <div class="mobile-nav-row">
+                            <a class="mobile-nav-link" href="governance.html" id="mobile-governance-link">
+                                Leadership &amp; Governance
+                            </a>
+                            <button class="submenu-arrow" type="button"
+                                aria-label="Toggle Leadership &amp; Governance submenu" aria-expanded="true"
+                                aria-controls="mobile-governance-submenu">
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                    aria-hidden="true">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <ul class="mobile-submenu" id="mobile-governance-submenu">
+                            <li><a class="mobile-nav-link" href="meet-the-dean.html" id="mobile-meet-dean-link">Dean's
+                                    Welcome</a></li>
+                            <li><a class="mobile-nav-link" href="faculty.html" id="mobile-faculty-link">Faculty</a></li>
+                            <li><a class="mobile-nav-link" href="administration.html"
+                                    id="mobile-administration-link">Administration</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="mobile-nav-link" href="history.html" id="mobile-history-link">Our History</a></li>
+                    <li><a class="mobile-nav-link" href="olayan-legacy.html" id="mobile-olayan-link">Suliman S.
+                            Olayan</a></li>
+                    <li><a class="mobile-nav-link" href="global-recognitions.html"
+                            id="mobile-recognitions-link">Accreditations &amp; Rankings</a></li>
+                    <li><a class="mobile-nav-link" href="#" id="mobile-strategic-planning-link">Strategic Planning</a>
+                    </li>
+                    <li><a class="mobile-nav-link" href="work-at-osb.html" id="mobile-work-link">Work at OSB</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main id="main">
+        <!-- HERO -->
+        <section class="inner-hero theme-dark">
+            <div class="inner-hero__background" aria-hidden="true">
+                <img class="inner-hero__image" src="images/AUB-OSB-Inner-View-banner.jpg" alt=""
+                    onerror="this.remove()" />
+            </div>
+            <div class="container inner-hero__container">
+                <nav aria-label="Breadcrumb" class="inner-breadcrumb">
+                    <span>About</span>
+                    <span aria-hidden="true">/</span>
+                    <span aria-current="page">Strategic Plan</span>
+                </nav>
+                <div class="inner-hero__content">
+                    <h1>Our Strategic Plan</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- MISSION & VISION -->
+        <section class="sp-purpose" aria-label="Mission and vision">
+            <div class="container">
+                <div class="sp-statement reveal">
+                    <div class="section-header">
+                        <h2>Our Mission</h2>
+                    </div>
+                    <p class="sp-statement__text">
+                        Enable world-class business research, learning, and knowledge transfer from our authoritative
+                        anchor point within the MENA region.
+                    </p>
+                </div>
+                <div class="sp-statement reveal">
+                    <div class="section-header">
+                        <h2>Our Vision</h2>
+                    </div>
+                    <p class="sp-statement__text">
+                        Transform business thinking in the MENA region.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VALUES -->
+        <section class="sp-values section--muted" aria-labelledby="values-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 id="values-title">Our Values</h2>
+                    <p>Seven values that spell LEADERS.</p>
+                </div>
+                <ul class="sp-values-grid reveal" aria-label="L.E.A.D.E.R.S values">
+                    <li class="sp-value">
+                        <img class="sp-value__image" src="images/values/lifelong-learning.jpg" alt="" loading="lazy"
+                            onerror="this.remove()">
+                        <p class="sp-value__label">
+                            <span class="sp-value__letter" aria-hidden="true">L</span>
+                            <span class="sp-value__name">Lifelong Learning</span>
+                        </p>
+                    </li>
+                    <li class="sp-value">
+                        <img class="sp-value__image" src="images/values/empowerment.jpg" alt="" loading="lazy"
+                            onerror="this.remove()">
+                        <p class="sp-value__label">
+                            <span class="sp-value__letter" aria-hidden="true">E</span>
+                            <span class="sp-value__name">Empowerment</span>
+                        </p>
+                    </li>
+                    <li class="sp-value">
+                        <img class="sp-value__image" src="images/values/agility.jpg" alt="" loading="lazy"
+                            onerror="this.remove()">
+                        <p class="sp-value__label">
+                            <span class="sp-value__letter" aria-hidden="true">A</span>
+                            <span class="sp-value__name">Agility</span>
+                        </p>
+                    </li>
+                    <li class="sp-value">
+                        <img class="sp-value__image" src="images/values/diligence.jpg" alt="" loading="lazy"
+                            onerror="this.remove()">
+                        <p class="sp-value__label">
+                            <span class="sp-value__letter" aria-hidden="true">D</span>
+                            <span class="sp-value__name">Diligence</span>
+                        </p>
+                    </li>
+                    <li class="sp-value">
+                        <img class="sp-value__image" src="images/values/excellence.jpg" alt="" loading="lazy"
+                            onerror="this.remove()">
+                        <p class="sp-value__label">
+                            <span class="sp-value__letter" aria-hidden="true">E</span>
+                            <span class="sp-value__name">Excellence</span>
+                        </p>
+                    </li>
+                    <li class="sp-value">
+                        <img class="sp-value__image" src="images/values/respect.jpg" alt="" loading="lazy"
+                            onerror="this.remove()">
+                        <p class="sp-value__label">
+                            <span class="sp-value__letter" aria-hidden="true">R</span>
+                            <span class="sp-value__name">Respect</span>
+                        </p>
+                    </li>
+                    <li class="sp-value">
+                        <img class="sp-value__image" src="images/values/sustainability.jpg" alt="" loading="lazy"
+                            onerror="this.remove()">
+                        <p class="sp-value__label">
+                            <span class="sp-value__letter" aria-hidden="true">S</span>
+                            <span class="sp-value__name">Sustainability</span>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- STRATEGIC IMPERATIVES -->
+        <section class="sp-imperatives" aria-labelledby="imperatives-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 id="imperatives-title">Strategic Imperatives</h2>
+                    <p>Five priorities guide our work. Hover over a card, or tap it on a touch screen, to see its focus
+                        areas.</p>
+                </div>
+
+                <div class="sp-grid reveal">
+                    <article class="sp-card" tabindex="0"
+                        aria-label="Creating Captivating Learning Journeys. Focus areas on the back of the card.">
+                        <div class="sp-card__inner">
+                            <div class="sp-card__face sp-card__front">
+                                <img class="sp-card__image" src="images/AUB-OSB-Learning.jpg"
+                                    alt="Students collaborating in a modern classroom" loading="lazy"
+                                    onerror="this.remove()">
+                                <h3 class="sp-card__title">Creating Captivating Learning Journeys</h3>
+                            </div>
+                            <div class="sp-card__face sp-card__back">
+                                <p class="sp-card__lead">Transforming student learning into a comprehensive educational
+                                    journey</p>
+                                <ul class="sp-card__list">
+                                    <li>Teaching Innovation</li>
+                                    <li>Advising and Mentoring</li>
+                                    <li>Curriculum and Program Development</li>
+                                    <li>Learning Pursuits</li>
+                                    <li>Career Readiness</li>
+                                    <li>Case-Based Teaching</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="sp-card" tabindex="0"
+                        aria-label="Expanding Our Global Footprint. Focus areas on the back of the card.">
+                        <div class="sp-card__inner">
+                            <div class="sp-card__face sp-card__front">
+                                <img class="sp-card__image" src="images/AUB-OSB-Global.jpg"
+                                    alt="Global map and connectivity" loading="lazy" onerror="this.remove()">
+                                <h3 class="sp-card__title">Expanding Our Global Footprint</h3>
+                            </div>
+                            <div class="sp-card__face sp-card__back">
+                                <p class="sp-card__lead">Fostering global connectivity and international partnerships
+                                </p>
+                                <ul class="sp-card__list">
+                                    <li>Global Partnerships</li>
+                                    <li>Global Recruitment</li>
+                                    <li>Student Exchange</li>
+                                    <li>Student Competitions</li>
+                                    <li>Faculty Exchange</li>
+                                    <li>Global Accreditation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="sp-card" tabindex="0"
+                        aria-label="Pioneering Transformational Research. Focus areas on the back of the card.">
+                        <div class="sp-card__inner">
+                            <div class="sp-card__face sp-card__front">
+                                <img class="sp-card__image" src="images/AUB-OSB-Research.jpg"
+                                    alt="Research and data analysis" loading="lazy" onerror="this.remove()">
+                                <h3 class="sp-card__title">Pioneering Transformational Research</h3>
+                            </div>
+                            <div class="sp-card__face sp-card__back">
+                                <p class="sp-card__lead">Elevating research impact and establishing centers of
+                                    distinction</p>
+                                <ul class="sp-card__list">
+                                    <li>Resources and Support</li>
+                                    <li>Research Visibility</li>
+                                    <li>Synergy With Education and Executive Education</li>
+                                    <li>Grant-Seeking Culture</li>
+                                    <li>Connections with Practice</li>
+                                    <li>Centers of Excellence</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="sp-card" tabindex="0"
+                        aria-label="Elevating Stakeholder Engagement. Focus areas on the back of the card.">
+                        <div class="sp-card__inner">
+                            <div class="sp-card__face sp-card__front">
+                                <img class="sp-card__image" src="images/AUB-OSB-Stakeholders.jpg"
+                                    alt="Business professionals networking" loading="lazy" onerror="this.remove()">
+                                <h3 class="sp-card__title">Elevating Stakeholder Engagement</h3>
+                            </div>
+                            <div class="sp-card__face sp-card__back">
+                                <p class="sp-card__lead">Engaging effectively with stakeholders</p>
+                                <ul class="sp-card__list">
+                                    <li>Executive Education</li>
+                                    <li>Alumni Relations</li>
+                                    <li>Industry Ties &amp; Associations</li>
+                                    <li>Community</li>
+                                    <li>Policy-Makers</li>
+                                    <li>Academic Institutions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="sp-card" tabindex="0"
+                        aria-label="Cultivating a Vibrant Culture. Focus areas on the back of the card.">
+                        <div class="sp-card__inner">
+                            <div class="sp-card__face sp-card__front">
+                                <img class="sp-card__image" src="images/AUB-OSB-Culture.jpg"
+                                    alt="Diverse team working together" loading="lazy" onerror="this.remove()">
+                                <h3 class="sp-card__title">Cultivating a Vibrant Culture</h3>
+                            </div>
+                            <div class="sp-card__face sp-card__back">
+                                <p class="sp-card__lead">Nurturing an enriching institutional culture</p>
+                                <ul class="sp-card__list">
+                                    <li>Student Centric Culture</li>
+                                    <li>Psychologically Safe Culture</li>
+                                    <li>Faculty &amp; Staff Development</li>
+                                    <li>Innovation and Accomplishments</li>
+                                    <li>Sticking Together</li>
+                                    <li>Continuous Improvement</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUSTAINABLE DEVELOPMENT GOALS -->
+        <section class="sp-sdgs section--muted" aria-labelledby="sdg-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2 id="sdg-title">Building Sustainable Value</h2>
+                    <p>We recognize the vital importance of specific SDGs that resonate strongly with our institutional
+                        values and strategic objectives. Our school's focus areas include SDGs 5, 8, 9, 12, and 16,
+                        which we aim to integrate into our teaching, research, impact initiatives, and operational
+                        practices.</p>
+                </div>
+                <ul class="sp-sdg-grid reveal" aria-label="Focus SDGs: 5, 8, 9, 12 and 16">
+                    <li class="sp-sdg">
+                        <img class="sp-sdg__image" src="images/logos/external/SDG_GenderEquality.png"
+                            alt="SDG 5: Gender Equality" loading="lazy">
+                    </li>
+                    <li class="sp-sdg">
+                        <img class="sp-sdg__image" src="images/logos/external/SDG_DecentWork.png"
+                            alt="SDG 8: Decent Work and Economic Growth" loading="lazy">
+                    </li>
+                    <li class="sp-sdg">
+                        <img class="sp-sdg__image" src="images/logos/external/SDG_Industry.png"
+                            alt="SDG 9: Industry, Innovation and Infrastructure" loading="lazy">
+                    </li>
+                    <li class="sp-sdg">
+                        <img class="sp-sdg__image" src="images/logos/external/SDG_ResponsibleConsumption.png"
+                            alt="SDG 12: Responsible Consumption and Production" loading="lazy">
+                    </li>
+                    <li class="sp-sdg">
+                        <img class="sp-sdg__image" src="images/logos/external/SDG_PeaceJusticeInstitutions.png"
+                            alt="SDG 16: Peace, Justice and Strong Institutions" loading="lazy">
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sticky action buttons -->
+    <div class="sticky-cta">
+        <a aria-label="Download Brochure" class="sticky-cta__btn" href="#">
+            <svg aria-hidden="true" class="sticky-cta__icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M7 5.222V0h2v5.193l1.107-1.107L11.52 5.5 7.986 9.036 4.45 5.5l1.414-1.414L7 5.222zM16 11v5H0v-5h2v3h12v-3h2z">
+                </path>
+            </svg>
+            <span class="sticky-cta__label">Download Brochure</span>
+        </a>
+        <a aria-label="Contact Us" class="sticky-cta__btn" href="#">
+            <svg aria-hidden="true" class="sticky-cta__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="2.8">
+                    <rect height="16" width="22" x="1" y="4"></rect>
+                    <polyline points="1 4 12 13 23 4"></polyline>
+                </g>
+            </svg>
+            <span class="sticky-cta__label">Contact Us</span>
+        </a>
+    </div>
+
+    <!-- READY TO JOIN CTA -->
+    <section class="join-cta">
+        <div class="container join-cta__inner">
+            <div class="join-cta__text">
+                <h2 class="join-cta__title">Ready to join OSB?</h2>
+                <p class="join-cta__copy">Explore our programs or talk to admissions.</p>
+            </div>
+            <div class="join-cta__actions">
+                <a class="btn btn-outline" href="https://www.aub.edu.lb/osb/Pages/default.aspx">Explore programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flip cards: hover/focus handled in CSS; on touch screens a tap flips the card -->
+    <script>
+        (function () {
+            var touch = window.matchMedia('(hover: none)');
+            document.querySelectorAll('.sp-card').forEach(function (card) {
+                card.addEventListener('click', function () {
+                    if (touch.matches) card.classList.toggle('is-flipped');
+                });
+            });
+        })();
+    </script>
+
+    <!-- FOOTER -->
+    <div id="footer-placeholder"></div>
+    <script src="https://liiwaa-osb.github.io/AUB-OSB-shared-components/footer-load-V.js"></script>
+</body>
+
+</html>

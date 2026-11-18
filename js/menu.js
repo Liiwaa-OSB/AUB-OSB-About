@@ -107,9 +107,10 @@
 
   /* Close after navigating (same-page / hash links) */
   document.querySelectorAll(".mobile-nav-link").forEach(function (link) {
+    // Skip the parent toggle link of a submenu (handled above)
+    if (link.parentElement.classList.contains("has-submenu")) return;
     link.addEventListener("click", () => closeOverlay(false));
   });
-
   /* ============================================= */
   /* ACTIVE NAVIGATION ITEM                        */
   /* ============================================= */
@@ -141,3 +142,64 @@
   markActive(".nav-osb-links .osb-nav-item > a");
   markActive(".mobile-nav-link");
 })();
+
+/* ============================================= */
+/* MOBILE SUBMENU TOGGLE (arrow button)          */
+/* ============================================= */
+
+document.querySelectorAll(".mobile-nav .has-submenu > .mobile-nav-row > .submenu-arrow").forEach(function (btn) {
+  btn.addEventListener("click", function (event) {
+    event.preventDefault();
+    const parent = btn.closest(".has-submenu");
+    const isOpenSub = parent.classList.toggle("open");
+    btn.setAttribute("aria-expanded", isOpenSub ? "true" : "false");
+  });
+});
+
+/* --- Desktop submenu keyboard support --- */
+document.querySelectorAll(".nav-osb-links .has-submenu > a").forEach(function (trigger) {
+  const submenu = trigger.parentElement.querySelector(".osb-submenu");
+  if (!submenu) return;
+
+  trigger.setAttribute("aria-haspopup", "true");
+  trigger.setAttribute("aria-expanded", "false");
+
+  trigger.addEventListener("click", function (event) {
+    // Only intercept if the trigger link itself would navigate away
+    // and the user doesn't have a modified click (ctrl/cmd/middle).
+    const isModified = event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0;
+    if (isModified) return;
+
+    // If submenu is currently closed, open it on first click instead of navigating.
+    const parent = trigger.parentElement;
+    const expanded = trigger.getAttribute("aria-expanded") === "true";
+    if (!expanded) {
+      event.preventDefault();
+      trigger.setAttribute("aria-expanded", "true");
+      parent.classList.add("submenu-open");
+      // move focus to first submenu item
+      const firstItem = submenu.querySelector("a");
+      if (firstItem) firstItem.focus();
+    } else {
+      trigger.setAttribute("aria-expanded", "false");
+      parent.classList.remove("submenu-open");
+    }
+  });
+
+  // Close when focus leaves the submenu entirely
+  trigger.parentElement.addEventListener("focusout", function (event) {
+    if (!trigger.parentElement.contains(event.relatedTarget)) {
+      trigger.setAttribute("aria-expanded", "false");
+      trigger.parentElement.classList.remove("submenu-open");
+    }
+  });
+
+  // Escape closes
+  trigger.parentElement.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      trigger.setAttribute("aria-expanded", "false");
+      trigger.parentElement.classList.remove("submenu-open");
+      trigger.focus();
+    }
+  });
+});

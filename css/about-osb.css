@@ -85,7 +85,6 @@
 
   margin: 0 0 1.5rem;
   color: var(--color-white);
-  font-family: var(--font-display);
   font-size: clamp(2rem, 3.4vw, 3.25rem);
   font-weight: 700;
   line-height: 1.12;
@@ -98,12 +97,9 @@
 }
 
 .abt-hero__sub {
-  --abt-anim-delay: 0.45s;
-
-  max-width: 700px;
+  --hero-animation-delay: 0.45s;
   margin: 0 0 2.25rem;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 1.32rem;
   line-height: 1.55;
 }
 
@@ -146,7 +142,6 @@
 .abt-hero__aside-title {
   margin: 0 0 1.25rem;
   color: rgba(255, 255, 255, 0.92);
-  font-family: var(--font-display);
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -179,7 +174,6 @@
 .abt-hero__stat-value {
   margin-bottom: 0.3rem;
   color: #fff;
-  font-family: var(--font-display);
   font-size: 1.2rem;
   font-weight: 700;
   line-height: 1.2;
@@ -400,7 +394,7 @@
 .vm-card__body h3 {
   margin: 0 0 0.6rem;
   color: var(--color-primary);
-  font-size: 1.1rem;
+  
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -409,7 +403,6 @@
 .vm-card__body p {
   margin: 0;
   color: var(--color-ink);
-  font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.55;
 }
@@ -443,7 +436,6 @@
 .programs-box__title {
   margin: 0 0 1.25rem;
   color: var(--color-ink);
-  font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 700;
 }
@@ -484,7 +476,6 @@
 
 .program-row__name {
   color: var(--color-ink);
-  font-size: 1.02rem;
   line-height: 1.4;
   transition: color var(--transition-fast);
 }
@@ -569,7 +560,7 @@
 .program-tile__arrow {
   flex: 0 0 auto;
   color: var(--color-primary);
-  font-size: 1.1rem;
+  
   opacity: 0;
   transform: translateX(-6px);
   transition: opacity var(--transition-fast), transform var(--transition-fast);
