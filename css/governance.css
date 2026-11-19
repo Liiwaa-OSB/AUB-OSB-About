@@ -1,173 +1,150 @@
 /* ==========================================================
-   Leadership & Governance Page Styles
+   Leadership & Governance (governance.html)
    ========================================================== */
 
-/* ==========================================================
-   Dean Spotlight — portrait beside text
-   ========================================================== */
-
+/* ---------- Dean spotlight: portrait beside text ---------- */
 .dean-spotlight__inner {
-    display: grid;
-    grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
-    gap: var(--space-xl);
-    align-items: center;
+  display: grid;
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  gap: var(--space-xl);
+  align-items: center;
 }
 
-/* Portrait frame — matches the OSB card language */
 .dean-spotlight__portrait {
-    position: relative;
-    aspect-ratio: 4 / 5;
-    overflow: hidden;
-    border: 1px solid var(--section-border);
-    border-radius: var(--radius-lg);
-    background: var(--color-white);
-    box-shadow: var(--shadow-md);
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--section-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
 }
 
 .dean-spotlight__portrait::after {
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
-    content: "";
-    pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  content: "";
+  pointer-events: none;
 }
 
 .dean-spotlight__portrait img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    transition: transform 0.8s var(--ease-out);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform var(--transition-slow) var(--ease-out);
 }
 
 .dean-spotlight__media:hover .dean-spotlight__portrait img {
-    transform: scale(1.03);
+  transform: scale(1.03);
+}
+
+.gov-dean__text {
+  margin: 0 0 var(--space-ms);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Quick access cards ---------- */
+.gov-quick-access {
+  padding-block: var(--space-2xl) var(--space-xl);
+  background: var(--color-surface-muted);
+}
+
+.gov-access-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-ml) var(--space-ml) 2.25rem;
+}
+
+.gov-access-card:hover {
+  border-color: var(--color-primary-mid);
+}
+
+.gov-access-card__icon {
+  display: inline-flex;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-ms);
+  color: var(--color-primary);
+  border-radius: var(--radius-md);
+  background: var(--color-primary-mid);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.gov-access-card:hover .gov-access-card__icon {
+  color: var(--color-white);
+  background: var(--color-primary);
+}
+
+.gov-access-card__title {
+  margin: 0 0 var(--space-xs);
+  color: var(--color-ink);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+}
+
+.gov-access-card__desc {
+  flex: 1 1 auto;
+  margin: 0 0 var(--space-md);
+  color: var(--color-text-muted);
+  font-size: var(--fs-md);
+}
+
+.gov-access-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-primary);
+  font-size: var(--fs-card);
+  font-weight: var(--fw-semibold);
+}
+
+.gov-access-card__link span {
+  transition: transform var(--transition-fast) var(--ease-out);
+}
+
+.gov-access-card:hover .gov-access-card__link span {
+  transform: translateX(4px);
 }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
-    .dean-spotlight__inner {
-        grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
-        gap: var(--space-lg);
-    }
+  .dean-spotlight__inner {
+    grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+    gap: var(--space-lg);
+  }
 }
 
 @media (max-width: 768px) {
-    .dean-spotlight__inner {
-        grid-template-columns: minmax(0, 1fr);
-        gap: var(--space-lg);
-        text-align: left;
-    }
+  .dean-spotlight__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
 
-    .dean-spotlight__media {
-        max-width: 320px;
-        margin-inline: auto;
-    }
+  .dean-spotlight__media {
+    max-width: 320px;
+    margin-inline: auto;
+  }
+}
 
-    .dean-spotlight__portrait {
-        max-width: 100%;
-        margin-inline: auto;
-    }
+@media (max-width: 640px) {
+  .gov-access-card {
+    padding: 1.75rem var(--space-md) var(--space-ml);
+  }
 }
 
 @media (max-width: 560px) {
-    .dean-spotlight__media {
-        max-width: 100%;
-    }
+  .dean-spotlight__media {
+    max-width: 100%;
+  }
 
-    .dean-spotlight__portrait {
-        max-width: 260px;
-        margin-inline: auto;
-    }
-}
-
-/* ------------ */
-
-.gov-quick-access {
-    padding-block: var(--space-2xl) var(--space-xl);
-    background: var(--color-surface-muted);
-}
-
-/* Make the card a flex column so the link sits at the bottom */
-.gov-access-card {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 2rem 2.25rem;
-    text-decoration: none;
-    color: inherit;
-    transition: transform var(--transition-base) var(--ease-out),
-        box-shadow var(--transition-base) var(--ease-out),
-        border-color var(--transition-base) var(--ease-out);
-}
-
-.gov-access-card:hover {
-    border-color: var(--color-primary-mid);
-}
-
-/* Icon */
-.gov-access-card__icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 56px;
-    height: 56px;
-    margin-bottom: 1.25rem;
-    color: var(--color-primary);
-    background: var(--color-primary-mid);
-    border-radius: var(--radius-md);
-    transition: background var(--transition-fast);
-}
-
-.gov-access-card:hover .gov-access-card__icon {
-    background: var(--color-primary);
-    color: var(--color-white);
-}
-
-/* Title */
-.gov-access-card__title {
-    margin: 0 0 0.5rem;
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--color-ink);
-}
-
-/* Description */
-.gov-access-card__desc {
-    flex: 1 1 auto;
-    margin: 0 0 1.5rem;
-    color: var(--color-text-muted);
-    font-size: 0.93rem;
-    line-height: 1.5;
-}
-
-/* Link at bottom */
-.gov-access-card__link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: var(--color-primary);
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.gov-access-card__link span {
-    transition: transform var(--transition-fast) var(--ease-out);
-}
-
-.gov-access-card:hover .gov-access-card__link span {
-    transform: translateX(4px);
-}
-
-.gov-dean__text {
-    margin: 0 0 1.25rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-}
-
-/* Responsive: stack on small screens */
-@media (max-width: 640px) {
-    .gov-access-card {
-        padding: 1.75rem 1.5rem 2rem;
-    }
+  .dean-spotlight__portrait {
+    max-width: 260px;
+    margin-inline: auto;
+  }
 }

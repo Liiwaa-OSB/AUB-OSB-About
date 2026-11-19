@@ -1,3 +1,9 @@
+/* ==========================================================
+   People directories — renders js/people-data.js into
+   #admin-container (administration.html) or
+   #faculty-container (faculty.html). Styles: css/people.css
+   ========================================================== */
+
 const ADMIN_GROUP_ORDER = [
   "Academic Administration",
   "Administrators",
@@ -55,6 +61,7 @@ function buildFilterUI(options, onFilterChange) {
   options.forEach((opt, index) => {
     // Add to Desktop
     const btn = document.createElement("button");
+    btn.type = "button";
     btn.className = `filter-btn ${index === 0 ? "is-active" : ""}`;
     btn.textContent = opt.label;
     btn.dataset.value = opt.value;
@@ -233,3 +240,15 @@ function renderFacultyPage(container) {
   container.appendChild(contentContainer);
   drawContent("all");
 }
+
+/* ==========================================
+   INIT — scripts load with `defer`, so the DOM
+   is ready and people-data.js has already run.
+   ========================================== */
+(function initPeopleDirectory() {
+  const adminContainer = document.getElementById("admin-container");
+  if (adminContainer) renderAdminPage(adminContainer);
+
+  const facultyContainer = document.getElementById("faculty-container");
+  if (facultyContainer) renderFacultyPage(facultyContainer);
+})();

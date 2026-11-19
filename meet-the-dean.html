@@ -3,99 +3,72 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Dean's Welcome | AUB Suliman S. Olayan School of Business</title>
-    <link href="images/logos/favicon.ico" rel="icon" type="image/x-icon" />
-    <meta name="description"
-        content="A message from Dean Yusuf Sidani, Dean of the Suliman S. Olayan School of Business at AUB." />
+    <meta name="description" content="A message from Dean Yusuf Sidani, Dean of the Suliman S. Olayan School of Business at AUB." />
+    <link rel="icon" href="images/logos/favicon.ico" type="image/x-icon" />
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
-        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" />
 
-    <!-- Site styles -->
-    <link href="css/main.css" rel="stylesheet" />
-    <link href="css/menu.css" rel="stylesheet" />
+    <!-- Styles: shared, then this page -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/meet-the-dean.css" />
 
-    <!-- Page specific styles -->
-    <link href="css/meet-the-dean.css" rel="stylesheet" />
-
+    <!-- Scripts -->
     <script defer src="js/main.js"></script>
-    <script defer src="js/menu.js"></script>
 </head>
 
-<body class="dean-page">
+<body class="page-dean">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- ===== HEADER (identical on every page; active link is set by js/main.js) ===== -->
     <header class="nav-main-header">
         <div class="nav-main-container">
-
-            <!-- LOGO -->
             <div class="nav-logo">
                 <a href="https://www.aub.edu.lb/osb/Pages/default.aspx">
                     <img src="images/logos/AUB+OSB-Merged-Logo-white.png" alt="AUB OSB Logo" />
                 </a>
             </div>
 
-            <!-- DESKTOP NAVIGATION -->
             <nav class="nav-osb-links" aria-label="Main navigation">
                 <ul class="osb-nav">
-                    <li class="osb-nav-item mba-nav-item">
-                        <a href="about-osb.html" id="about-osb-link">Overview</a>
-                    </li>
-
-                    <!-- Leadership & Governance with SUBMENU -->
-                    <li class="osb-nav-item mba-nav-item has-submenu">
-                        <a href="governance.html" id="governance-link" aria-haspopup="true" aria-expanded="false">
-                            Leadership &amp; Governance
-                        </a>
+                    <li class="osb-nav-item"><a href="about-osb.html" id="about-osb-link">Overview</a></li>
+                    <li class="osb-nav-item has-submenu">
+                        <a href="governance.html" id="governance-link" aria-haspopup="true" aria-expanded="false">Leadership &amp; Governance</a>
                         <ul class="osb-submenu">
                             <li><a href="meet-the-dean.html" id="meet-dean-link">Dean's Welcome</a></li>
                             <li><a href="faculty.html" id="faculty-link">Faculty</a></li>
                             <li><a href="administration.html" id="administration-link">Administration</a></li>
                         </ul>
                     </li>
-
-                    <li class="osb-nav-item mba-nav-item">
-                        <a href="history.html" id="history-link">Our History</a>
-                    </li>
-                    <li class="osb-nav-item mba-nav-item">
-                        <a href="olayan-legacy.html" id="olayan-link">Suliman S. Olayan</a>
-                    </li>
-                    <li class="osb-nav-item mba-nav-item">
-                        <a href="global-recognitions.html" id="recognitions-link">Accreditations &amp; Rankings</a>
-                    </li>
-                    <li class="osb-nav-item mba-nav-item">
-                        <a href="strategic-plan.html" id="strategic-planning-link">Strategic Plan</a>
-                    </li>
-                    <li class="osb-nav-item mba-nav-item">
-                        <a href="work-at-osb.html" id="work-link">Work at OSB</a>
-                    </li>
+                    <li class="osb-nav-item"><a href="history.html" id="history-link">Our History</a></li>
+                    <li class="osb-nav-item"><a href="olayan-legacy.html" id="olayan-link">Suliman S. Olayan</a></li>
+                    <li class="osb-nav-item"><a href="global-recognitions.html" id="recognitions-link">Accreditations &amp; Rankings</a></li>
+                    <li class="osb-nav-item"><a href="strategic-plan.html" id="strategic-planning-link">Strategic Plan</a></li>
+                    <li class="osb-nav-item"><a href="work-at-osb.html" id="work-link">Work at OSB</a></li>
                 </ul>
             </nav>
 
-            <!-- MOBILE MENU BUTTON -->
             <button class="mobile-burger-inline" id="mobileBurgerBtn" type="button" aria-label="Open menu"
                 aria-controls="mobileOverlay" aria-expanded="false">
-                <svg fill="none" height="28" width="28" viewBox="0 0 24 24" stroke="white" stroke-width="2"
-                    aria-hidden="true">
+                <svg fill="none" height="28" width="28" viewBox="0 0 24 24" stroke="white" stroke-width="2" aria-hidden="true">
                     <line x1="3" y1="6" x2="21" y2="6"></line>
                     <line x1="3" y1="12" x2="21" y2="12"></line>
                     <line x1="3" y1="18" x2="21" y2="18"></line>
                 </svg>
             </button>
-
         </div>
     </header>
 
-    <!-- MOBILE OVERLAY -->
+    <!-- ===== MOBILE MENU OVERLAY ===== -->
     <div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-modal="true" aria-label="Main menu"
         aria-hidden="true" inert>
         <div class="mobile-overlay-content">
             <button class="mobile-close" id="closeOverlayBtn" type="button" aria-label="Close menu">
-                <svg fill="none" height="28" width="28" viewBox="0 0 24 24" stroke="white" stroke-width="2"
-                    aria-hidden="true">
+                <svg fill="none" height="28" width="28" viewBox="0 0 24 24" stroke="white" stroke-width="2" aria-hidden="true">
                     <line x1="5" y1="5" x2="19" y2="19"></line>
                     <line x1="19" y1="5" x2="5" y2="19"></line>
                 </svg>
@@ -103,37 +76,26 @@
             <nav aria-label="Mobile navigation">
                 <ul class="mobile-nav">
                     <li><a class="mobile-nav-link" href="about-osb.html" id="mobile-about-osb-link">Overview</a></li>
-
-                    <!-- Leadership & Governance submenu (mobile) — starts collapsed -->
                     <li class="has-submenu">
                         <div class="mobile-nav-row">
-                            <a class="mobile-nav-link" href="governance.html" id="mobile-governance-link">
-                                Leadership &amp; Governance
-                            </a>
-                            <button class="submenu-arrow" type="button"
-                                aria-label="Toggle Leadership &amp; Governance submenu" aria-expanded="false"
-                                aria-controls="mobile-governance-submenu">
-                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-                                    aria-hidden="true">
+                            <a class="mobile-nav-link" href="governance.html" id="mobile-governance-link">Leadership &amp; Governance</a>
+                            <button class="submenu-arrow" type="button" aria-label="Toggle Leadership &amp; Governance submenu"
+                                aria-expanded="false" aria-controls="mobile-governance-submenu">
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="6 9 12 15 18 9"></polyline>
                                 </svg>
                             </button>
                         </div>
                         <ul class="mobile-submenu" id="mobile-governance-submenu">
-                            <li><a class="mobile-nav-link" href="meet-the-dean.html" id="mobile-meet-dean-link">Dean's
-                                    Welcome</a></li>
+                            <li><a class="mobile-nav-link" href="meet-the-dean.html" id="mobile-meet-dean-link">Dean's Welcome</a></li>
                             <li><a class="mobile-nav-link" href="faculty.html" id="mobile-faculty-link">Faculty</a></li>
-                            <li><a class="mobile-nav-link" href="administration.html"
-                                    id="mobile-administration-link">Administration</a></li>
+                            <li><a class="mobile-nav-link" href="administration.html" id="mobile-administration-link">Administration</a></li>
                         </ul>
                     </li>
                     <li><a class="mobile-nav-link" href="history.html" id="mobile-history-link">Our History</a></li>
-                    <li><a class="mobile-nav-link" href="olayan-legacy.html" id="mobile-olayan-link">Suliman S.
-                            Olayan</a></li>
-                    <li><a class="mobile-nav-link" href="global-recognitions.html"
-                            id="mobile-recognitions-link">Accreditations &amp; Rankings</a></li>
-                    <li><a class="mobile-nav-link" href="strategic-plan.html" id="mobile-strategic-planning-link">Strategic Plan</a>
-                    </li>
+                    <li><a class="mobile-nav-link" href="olayan-legacy.html" id="mobile-olayan-link">Suliman S. Olayan</a></li>
+                    <li><a class="mobile-nav-link" href="global-recognitions.html" id="mobile-recognitions-link">Accreditations &amp; Rankings</a></li>
+                    <li><a class="mobile-nav-link" href="strategic-plan.html" id="mobile-strategic-planning-link">Strategic Plan</a></li>
                     <li><a class="mobile-nav-link" href="work-at-osb.html" id="mobile-work-link">Work at OSB</a></li>
                 </ul>
             </nav>
@@ -162,10 +124,10 @@
         <!-- MAIN CONTENT -->
         <section class="dean-content section--muted">
             <div class="container">
-                <div class="dean-layout">
+                <div class="profile-layout">
 
                     <!-- Left Column: Profile Card -->
-                    <aside class="dean-sidebar reveal">
+                    <aside class="profile-layout__aside dean-sidebar reveal">
                         <div class="profile-card">
                             <div class="profile-card__image-wrap">
                                 <img src="images/AUB-OSB-Dean-YUSUF SIDANI.png" alt="Dr. Yusuf Sidani" />
@@ -190,21 +152,22 @@
 
                                 <div class="profile-group">
                                     <h3 class="profile-group__title">Contact</h3>
-                                    <p><a href="#" class="text-link">Office of the Dean</a></p>
+                                    <!-- TODO LINK: e.g. mailto:osbdean@aub.edu.lb -->
+                                    <p><a href="#" class="text-link" data-link-status="todo">Office of the Dean</a></p>
                                 </div>
                             </div>
                         </div>
                     </aside>
 
                     <!-- Right Column: Message & Bio -->
-                    <div class="dean-main reveal reveal-delay-1">
+                    <div class="profile-layout__main reveal reveal-delay-1">
 
                         <blockquote class="dean-quote">
                             “World-class student learning remains our top strategic priority, and it depends on the
                             passionate teachers and exceptional researchers who make OSB what it is.”
                         </blockquote>
 
-                        <div class="prose dean-prose">
+                        <div class="prose prose--article">
                             <p class="dean-greeting">Welcome to the Suliman S. Olayan School of Business.</p>
 
                             <p>
@@ -260,18 +223,18 @@
         </section>
     </main>
 
-    <!-- Sticky action buttons -->
+    <!-- ===== STICKY ACTION BUTTONS ===== -->
     <div class="sticky-cta">
-        <a aria-label="Download Brochure" class="sticky-cta__btn" href="#">
-            <svg aria-hidden="true" class="sticky-cta__icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M7 5.222V0h2v5.193l1.107-1.107L11.52 5.5 7.986 9.036 4.45 5.5l1.414-1.414L7 5.222zM16 11v5H0v-5h2v3h12v-3h2z">
-                </path>
+        <!-- TODO LINK: brochure file -->
+        <a class="sticky-cta__btn" href="#" aria-label="Download Brochure" data-link-status="todo">
+            <svg class="sticky-cta__icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M7 5.222V0h2v5.193l1.107-1.107L11.52 5.5 7.986 9.036 4.45 5.5l1.414-1.414L7 5.222zM16 11v5H0v-5h2v3h12v-3h2z"></path>
             </svg>
             <span class="sticky-cta__label">Download Brochure</span>
         </a>
-        <a aria-label="Contact Us" class="sticky-cta__btn" href="#">
-            <svg aria-hidden="true" class="sticky-cta__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <!-- TODO LINK: contact page or mailto -->
+        <a class="sticky-cta__btn" href="#" aria-label="Contact Us" data-link-status="todo">
+            <svg class="sticky-cta__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <g fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="2.8">
                     <rect height="16" width="22" x="1" y="4"></rect>
                     <polyline points="1 4 12 13 23 4"></polyline>
@@ -281,20 +244,20 @@
         </a>
     </div>
 
-    <!-- READY TO JOIN CTA -->
-    <section class="join-cta">
-        <div class="container join-cta__inner">
-            <div class="join-cta__text">
-                <h2 class="join-cta__title">Ready to join OSB?</h2>
-                <p class="join-cta__copy">Explore our programs or talk to admissions.</p>
+    <!-- ===== READY TO JOIN CTA ===== -->
+    <section class="cta-band cta-band--brand">
+        <div class="container cta-band__inner">
+            <div>
+                <h2 class="cta-band__title">Ready to join OSB?</h2>
+                <p class="cta-band__copy">Explore our programs or talk to admissions.</p>
             </div>
-            <div class="join-cta__actions">
+            <div class="cta-band__actions">
                 <a class="btn btn-outline" href="https://www.aub.edu.lb/osb/Pages/default.aspx">Explore programs</a>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ===== FOOTER (shared component, loaded remotely) ===== -->
     <div id="footer-placeholder"></div>
     <script src="https://liiwaa-osb.github.io/AUB-OSB-shared-components/footer-load-V.js"></script>
 </body>

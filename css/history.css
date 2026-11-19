@@ -1,8 +1,19 @@
 /* ==========================================================
-   History Page Styles
+   Our History (history.html)
    ========================================================== */
 
-/* ---------- Timeline Section ---------- */
+/* ---------- OSB today ---------- */
+.history-today .section-header {
+  margin-bottom: var(--space-md);
+}
+
+.history-today__text {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--fs-lg);
+}
+
+/* ---------- Timeline section (photo background) ---------- */
 .history-timeline-section {
   position: relative;
   padding-block: var(--space-2xl);
@@ -10,22 +21,21 @@
   color: var(--color-white);
 }
 
-.history-timeline-section::before {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-image: url("../images/AUB-OSB-Independent-School-banner.png");
-  background-position: center 85%;
-  background-size: cover;
-  content: "";
-}
-
+.history-timeline-section::before,
 .history-timeline-section::after {
   position: absolute;
   inset: 0;
-  z-index: 1;
-  background: rgba(0,0,0, 0.25);
   content: "";
+}
+
+.history-timeline-section::before {
+  z-index: 0;
+  background: url("../images/AUB-OSB-Independent-School-banner.png") center 85% / cover;
+}
+
+.history-timeline-section::after {
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.25);
 }
 
 .history-timeline-section > .container {
@@ -37,9 +47,7 @@
   margin-bottom: var(--space-xl);
 }
 
-.history-timeline-section .section-header h2,
-.history-timeline-section .timeline__year strong,
-.history-timeline-section .timeline__year span {
+.history-timeline-section .section-header h2 {
   color: var(--color-white);
 }
 
@@ -47,7 +55,7 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Timeline Grid */
+/* ---------- Timeline ---------- */
 .timeline {
   position: relative;
   display: grid;
@@ -56,20 +64,18 @@
   list-style: none;
 }
 
-/* Central Spine */
+/* Central spine */
 .timeline::before {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 50%;
   width: 1.5px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(255, 255, 255, 0.55) 6%,
-    rgba(255, 255, 255, 0.55) 94%,
-    transparent
-  );
+  background: linear-gradient(to bottom,
+      transparent,
+      rgba(255, 255, 255, 0.55) 6%,
+      rgba(255, 255, 255, 0.55) 94%,
+      transparent);
   content: "";
   transform: translateX(-50%);
 }
@@ -81,32 +87,30 @@
   align-items: center;
 }
 
-/* Year */
 .timeline__year {
   grid-column: 1;
   grid-row: 1;
+  color: var(--color-white);
   text-align: right;
 }
 
 .timeline__year strong {
   display: block;
   font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-  font-weight: 800;
+  font-weight: var(--fw-black);
   letter-spacing: -0.03em;
-  line-height: 1;
 }
 
 .timeline__year span {
   display: block;
   margin-top: 0.3rem;
   color: rgba(255, 255, 255, 0.78);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: var(--fs-3xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
 }
 
-/* Dot */
 .timeline__dot {
   position: relative;
   z-index: 1;
@@ -119,16 +123,14 @@
   background: var(--color-white);
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
   transition:
-    background 0.3s,
-    box-shadow 0.3s,
-    transform 0.3s;
+    box-shadow var(--transition-base) var(--ease-out),
+    transform var(--transition-base) var(--ease-out);
 }
 
-/* Card */
 .timeline__card {
   grid-column: 3;
   grid-row: 1;
-  padding: 1.25rem 1.5rem;
+  padding: var(--space-ms) var(--space-md);
   color: var(--color-ink);
   border-radius: var(--radius-md);
   background: var(--color-white);
@@ -138,18 +140,16 @@
 .timeline__card h3 {
   margin: 0 0 0.4rem;
   color: var(--color-ink);
-  font-weight: 700;
-  line-height: 1.3;
+  font-weight: var(--fw-bold);
 }
 
 .timeline__card p {
   margin: 0;
   color: var(--color-text-muted);
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: var(--fs-md);
 }
 
-/* Alternate Sides (Even items) */
+/* Even items swap sides */
 .timeline__item:nth-child(even) .timeline__year {
   grid-column: 3;
   text-align: left;
@@ -159,7 +159,7 @@
   grid-column: 1;
 }
 
-/* Key Milestones */
+/* Key milestones */
 .timeline__item--key .timeline__dot {
   box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.28);
 }
@@ -168,61 +168,42 @@
   box-shadow: inset 0 3px 0 var(--color-primary), 0 8px 18px rgba(0, 0, 0, 0.2);
 }
 
-/* Hover Effects */
 .timeline__item:hover .timeline__dot {
   box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.4);
   transform: scale(1.15);
 }
 
-/* ---------- OSB Today Section ---------- */
-.history-today .section-header {
-  margin-bottom: var(--space-md);
-}
-
-.history-today .section-header .eyebrow {
-  justify-content: center;
-}
-
-.history-today__text {
-  margin: 0;
-  color: var(--color-text-muted);
-  font-size: 1.15rem;
-  line-height: 1.6;
-}
-
-/* ==========================================================
-   Responsive
-   ========================================================== */
-
+/* ---------- Responsive: spine moves to the left ---------- */
 @media (max-width: 768px) {
   .history-timeline-section {
     padding-block: var(--space-xl);
   }
 
-  /* Shift spine to the left */
+  .history-today__text {
+    font-size: var(--fs-body);
+  }
+
   .timeline::before {
     left: 13px;
     transform: none;
   }
 
-  .timeline__item,
-  .timeline__item:nth-child(even) {
+  .timeline__item {
     grid-template-columns: 28px minmax(0, 1fr);
-    column-gap: var(--space-md);
     align-items: start;
   }
 
   .timeline__dot {
     grid-column: 1;
     grid-row: 1 / span 2;
-    margin-top: 0.5rem;
+    margin-top: var(--space-xs);
   }
 
   .timeline__year,
   .timeline__item:nth-child(even) .timeline__year {
     grid-column: 2;
     grid-row: 1;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-xs);
     text-align: left;
   }
 
@@ -231,9 +212,5 @@
     grid-column: 2;
     grid-row: 2;
     padding: 1.15rem;
-  }
-
-  .history-today__text {
-    font-size: 1.05rem;
   }
 }

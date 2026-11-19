@@ -1,65 +1,35 @@
 /* ==========================================================
-   Global Recognitions & Labels page.
-   Shared foundations (colours, spacing, buttons, hero,
-   sections) live in main.css. Only page-specific layout
-   lives here. The primary colour is never used with opacity.
+   Global Recognitions & Labels (global-recognitions.html)
+   The "See where our programs stand" band uses the shared
+   .cta-band--muted component from main.css.
    ========================================================== */
 
-/* ---------- Shared bits ---------- */
-.gr-logo-panel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  border-radius: var(--radius-md);
-}
-
-.gr-logo-panel .logo-ph {
-  width: 150px;
-  max-height: 100%;
-}
-
 /* ---------- Hero ---------- */
-.gr-kicker {
+.inner-hero__content .gr-kicker {
   margin-bottom: var(--space-sm);
-  color: var(--color-white) !important;
-  font-size: 1.25rem !important;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  color: var(--color-white);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
 }
 
 .gr-hero__actions {
   --cluster-gap: var(--space-md);
+
   margin-top: var(--space-md);
 }
 
 .gr-hero__badges {
+  position: absolute;
+  right: 0;
   display: flex;
   gap: var(--space-xs);
   list-style: none;
-  position: absolute;
-  right: 0;
 }
 
 .gr-hero__badges li {
   height: 120px;
-}
-
-@media (max-width: 920px) {
-  .gr-hero__actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .gr-hero__badges {
-    position: static;
-    margin-top: var(--space-md);
-  }
-
-  .gr-hero__badges li {
-    height: 100px;
-  }
 }
 
 /* ---------- Highlights: one strip, three big numbers ---------- */
@@ -78,99 +48,41 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 2.5rem 2.25rem;
+  padding: var(--space-lg) 2.25rem;
   background: var(--color-white);
 }
 
 .gr-highlight__value {
   color: var(--color-primary);
-  font-size: clamp(4rem, 6.5vw, 5.5rem);
-  font-weight: 800;
+  font-size: clamp(4rem, 6.5vw, 5.5rem); /* decorative figure */
+  font-weight: var(--fw-black);
   letter-spacing: -0.045em;
-  line-height: 0.95;
 }
 
 .gr-highlight__scope {
+  width: 100%;
   margin: var(--space-sm) 0 var(--space-md);
   padding-bottom: var(--space-sm);
-  width: 100%;
   border-bottom: 1px solid var(--section-border);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  line-height: 1.5;
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
 }
 
 .gr-highlight__program {
   margin-bottom: 0.4rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
 }
 
 .gr-highlight__source {
   margin-bottom: var(--space-sm);
   color: var(--color-text-muted);
-  font-size: 0.95rem;
+  font-size: var(--fs-card);
 }
 
-/* ---------- Rankings CTA ---------- */
-.gr-cta {
-  padding-block: var(--space-xl);
-  background: var(--color-surface-muted);
-  border-top: 1px solid var(--section-border);
-  border-bottom: 1px solid var(--section-border);
-}
-
-.gr-cta__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-lg);
-}
-
-.gr-cta__title {
-  margin: 0 0 0.5rem;
-  color: var(--color-ink);
-  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-}
-
-.gr-cta__copy {
-  max-width: 640px;
-  margin: 0;
-  color: var(--color-text-muted);
-  line-height: 1.55;
-}
-
-.gr-cta__actions {
-  flex: 0 0 auto;
-  display: flex;
-  gap: var(--space-sm);
-}
-
-@media (max-width: 768px) {
-  .gr-cta__inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-md);
-  }
-
-  .gr-cta__actions {
-    width: 100%;
-  }
-}
-
-@media (max-width: 560px) {
-  .gr-cta__actions .btn {
-    width: 100%;
-  }
-}
-
-/* ---------- About the school (two-column split, no burgundy) ---------- */
+/* ---------- About the school ---------- */
 .gr-about {
   padding-block: var(--space-2xl);
 }
@@ -191,29 +103,16 @@
 .gr-about__lead {
   margin: 0;
   color: var(--color-ink);
-  font-size: clamp(1.5rem, 2.4vw, 2rem);
-  font-weight: 700;
+  font-size: var(--fs-title);
+  font-weight: var(--fw-bold);
   letter-spacing: -0.015em;
-  line-height: 1.35;
 }
 
 .gr-about__body-col p {
   color: var(--color-text-muted);
-  line-height: 1.7;
 }
 
-@media (max-width: 1024px) {
-  .gr-about__layout {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-lg);
-  }
-}
-
-/* ==========================================================
-   Accreditations and Labels (New Split Layout)
-   ========================================================== */
-
-/* ---------- Section 1: School Accreditations (Horizontal Rows) ---------- */
+/* ---------- School accreditations: horizontal rows ---------- */
 .gr-school-accreditations {
   padding-block: var(--space-2xl) var(--space-xl);
 }
@@ -227,33 +126,30 @@
 .gr-acc-row {
   display: flex;
   align-items: center;
-  /* Centers logo vertically with the text block */
   gap: var(--space-xl);
-  padding: 2.5rem;
-  background: var(--color-white);
+  padding: var(--space-lg);
   border: 1px solid var(--section-border);
   border-radius: var(--radius-lg);
+  background: var(--color-white);
   box-shadow: var(--shadow-md);
 }
 
-/* 120px wide left column for the logo */
 .gr-acc-row__logo {
-  flex: 0 0 120px;
   display: flex;
+  height: 100%;
+  flex: 0 0 120px;
   align-items: center;
   justify-content: center;
-  height: 100%;
 }
 
 .gr-acc-row__logo .logo-ph {
   max-width: 100%;
   max-height: 130px;
-  object-fit: contain;
 }
 
 .gr-acc-row__content {
-  flex: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: flex-start;
 }
@@ -261,28 +157,26 @@
 .gr-acc-row__tag {
   margin-bottom: 0.4rem;
   color: var(--color-text-muted);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
 }
 
 .gr-acc-row__title {
   margin: 0 0 0.75rem;
   color: var(--color-ink);
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
 }
 
 .gr-acc-row__text {
-  margin: 0 0 1.25rem;
+  margin: 0 0 var(--space-ms);
   color: var(--color-text-muted);
-  font-size: var(--card-font-size);
-  line-height: 1.6;
+  font-size: var(--fs-card);
 }
 
-/* ---------- Section 2: Excellence Labels (2x2 Grid) ---------- */
+/* ---------- Excellence labels: 2 x 2 grid ---------- */
 .gr-program-labels {
   padding-block: var(--space-xl) var(--space-2xl);
 }
@@ -293,94 +187,67 @@
   gap: var(--space-md);
 }
 
-/* Update to the existing .gr-label-card rule */
 .gr-label-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 2rem;
-  background: var(--color-white);
+  padding: var(--space-ml);
   border: 1px solid var(--section-border);
   border-radius: var(--radius-lg);
+  background: var(--color-white);
   box-shadow: var(--shadow-md);
   transition:
     transform var(--transition-base) var(--ease-out),
     box-shadow var(--transition-base) var(--ease-out);
 }
 
-/* New: Logo panel at the top of the card */
+.gr-label-card:hover {
+  transform: translateY(var(--lift));
+  box-shadow: var(--shadow-hover);
+}
+
 .gr-label-card__logo {
   display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100px;
-  margin-bottom: 1.25rem;
-  padding: 1rem;
-  background: #faf9f6; /* Slightly warm off-white, matches the program box */
-  border: 1px dashed rgba(17, 17, 17, 0.15); /* Dashed border just like your screenshot */
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-ms);
+  padding: var(--space-sm);
+  border: 1px dashed rgba(17, 17, 17, 0.15);
   border-radius: var(--radius-md);
+  background: var(--color-surface-warm);
 }
 
 .gr-label-card__logo .logo-ph {
   max-width: 140px;
   max-height: 100%;
-  object-fit: contain;
 }
 
-/* Keep existing tag, title, text, hover rules... */
 .gr-label-card__tag {
   margin-bottom: 0.85rem;
   padding: 0.2rem 0.6rem;
   color: var(--color-primary);
   border-radius: var(--radius-pill);
   background: var(--color-primary-mid);
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: var(--fs-3xs);
+  font-weight: var(--fw-bold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .gr-label-card__title {
-  margin: 0 0 0.5rem;
+  margin: 0 0 var(--space-xs);
   color: var(--color-ink);
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
 }
 
 .gr-label-card__text {
-  flex: 1; /* Pushes the link to the bottom */
-  margin: 0 0 1.25rem;
+  flex: 1; /* pushes the link to the bottom */
+  margin: 0 0 var(--space-ms);
   color: var(--color-text-muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.gr-label-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-}
-
-/* ---------- Responsive ---------- */
-@media (max-width: 768px) {
-  .gr-acc-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-md);
-    padding: 1.75rem;
-  }
-
-  .gr-acc-row__logo {
-    height: auto;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--section-border);
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .gr-label-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
+  font-size: var(--fs-card);
 }
 
 /* ---------- Networks ---------- */
@@ -396,7 +263,7 @@
   grid-template-columns: 110px minmax(0, 1fr);
   gap: var(--space-md);
   align-items: center;
-  padding: 1.25rem;
+  padding: var(--space-ms);
   border: 1px solid var(--section-border);
   border-radius: var(--radius-md);
   background: var(--color-white);
@@ -406,35 +273,39 @@
 }
 
 .gr-network-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(var(--lift));
   box-shadow: var(--shadow-hover);
 }
 
-.gr-logo-panel--sm {
+.gr-logo-panel {
+  display: flex;
+  width: 100%;
   height: 90px;
+  align-items: center;
+  justify-content: center;
   padding: 0.4rem;
+  border-radius: var(--radius-md);
 }
 
-.gr-logo-panel--sm .logo-ph {
+.gr-logo-panel .logo-ph {
   width: 100%;
+  max-height: 100%;
 }
 
 .gr-network-card__title {
-  font-weight: 700;
-  line-height: 1.25;
+  font-weight: var(--fw-bold);
 }
 
 .gr-network-card__sub {
   margin-top: 0.25rem;
   color: var(--color-text-muted);
-  font-size: 0.85rem;
-  line-height: 1.4;
+  font-size: var(--fs-sm);
 }
 
 .gr-network-card .text-link {
   display: inline-block;
   margin-top: 0.6rem;
-  font-size: 0.9rem;
+  font-size: var(--fs-md);
 }
 
 /* ---------- Responsive ---------- */
@@ -443,13 +314,9 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .gr-standard,
-  .gr-standard--lead {
-    grid-column: span 6;
-  }
-
-  .gr-standard:last-child {
-    grid-column: span 12;
+  .gr-about__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-lg);
   }
 
   .gr-network__grid {
@@ -457,23 +324,49 @@
   }
 }
 
-@media (max-width: 640px) {
-  .gr-standards__grid {
+@media (max-width: 920px) {
+  .gr-hero__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gr-hero__badges {
+    position: static;
+    margin-top: var(--space-md);
+  }
+
+  .gr-hero__badges li {
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gr-acc-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: 1.75rem;
+  }
+
+  .gr-acc-row__logo {
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--section-border);
+  }
+
+  .gr-label-grid {
     grid-template-columns: minmax(0, 1fr);
   }
+}
 
-  .gr-standard,
-  .gr-standard--lead,
-  .gr-standard:last-child {
-    grid-column: auto;
-    padding: 1.5rem;
-  }
-
+@media (max-width: 640px) {
   .gr-network__grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
   .gr-highlight {
-    padding: 1.75rem 1.5rem;
+    padding: 1.75rem var(--space-md);
   }
 }
