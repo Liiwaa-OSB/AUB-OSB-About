@@ -26,7 +26,7 @@
   border-radius: var(--radius-pill);
   background: var(--color-white);
   cursor: pointer;
-  font-size: 0.98rem;
+  font-size: var(--card-font-size);
   font-weight: 600;
   white-space: nowrap;
   transition:

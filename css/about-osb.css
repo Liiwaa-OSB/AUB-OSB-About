@@ -394,7 +394,6 @@
 .vm-card__body h3 {
   margin: 0 0 0.6rem;
   color: var(--color-primary);
-  
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -608,7 +607,6 @@
 .explore-card h3 {
   margin: 0 0 0.6rem;
   color: var(--color-primary);
-  font-size: 1.15rem;
   font-weight: 700;
 }
 

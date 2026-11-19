@@ -32,14 +32,13 @@
 .work-feature h3 {
   margin: 0 0 0.6rem;
   color: var(--color-primary);
-  
   font-weight: 700;
 }
 
 .work-feature p {
   margin: 0;
   color: var(--color-text-muted);
-  font-size: 0.95rem;
+  font-size: var(--card-font-size);
   line-height: 1.55;
 }
 
@@ -89,7 +88,6 @@
 .job-card__title {
   margin: 0;
   color: var(--color-ink);
-  font-size: 1.4rem;
   font-weight: 700;
   line-height: 1.3;
 }
@@ -106,12 +104,12 @@
 .job-card__meta {
   margin: 0;
   color: var(--color-text-muted);
-  font-size: 0.95rem;
+  font-size: var(--card-font-size);
 }
 
 .job-card__action {
   color: var(--color-primary);
-  font-size: 0.95rem;
+  font-size: var(--card-font-size);
   font-weight: 600;
   transition: transform var(--transition-fast);
 }
@@ -182,7 +180,6 @@
 .step-content h3 {
   margin: 0 0 0.4rem;
   color: var(--color-ink);
-  font-size: 1.15rem;
   font-weight: 700;
 }
 
@@ -208,7 +205,6 @@
 .contact-card h3 {
   margin: 0 0 0.85rem;
   color: var(--color-ink);
-  font-size: 1.4rem;
   font-weight: 700;
 }
 
@@ -216,19 +212,6 @@
   margin: 0 0 1.5rem;
   color: var(--color-text-muted);
   line-height: 1.6;
-}
-
-/* ---------- EEO Notice ---------- */
-.eoe-notice {
-  padding-block: var(--space-md);
-  background: var(--color-ink);
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.85rem;
-  text-align: center;
-}
-
-.eoe-notice p {
-  margin: 0;
 }
 
 /* ==========================================================
@@ -263,10 +246,6 @@
     padding: 1.5rem;
   }
 
-  .job-card__title {
-    font-size: 1.2rem;
-  }
-
   .job-card__footer {
     flex-direction: column;
     align-items: flex-start;
@@ -286,7 +265,6 @@
   .step-number {
     width: 38px;
     height: 38px;
-    font-size: 1rem;
   }
 
   .contact-card {

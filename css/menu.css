@@ -60,7 +60,6 @@
 .nav-osb-links .osb-nav-item {
     flex: 0 0 auto;
     position: relative;
-    text-align: center;
     list-style: none;
 }
 
@@ -278,7 +277,6 @@ body.menu-open {
     min-width: 220px;
     background: #ffffff;
     list-style: none;
-    padding: 0.5rem 0;
     margin: 0;
     z-index: 1000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -296,12 +294,11 @@ body.menu-open {
 
 .osb-submenu li a {
     display: block;
-    padding: 0.6rem 1.2rem;
+    padding: 0.5rem;
     color: #111;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
-    text-transform: uppercase;
     letter-spacing: .3px;
     transition: color .2s ease, background .2s ease;
 }

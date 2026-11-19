@@ -16,6 +16,8 @@
   --font-body: "Roboto", sans-serif;
   --font-display: "Roboto", sans-serif;
 
+  --card-font-size: 0.95rem;
+
   /* Layout */
   --container-max-width: 1280px;
   --container-gutter: 4rem;
@@ -83,6 +85,10 @@ body {
 body,
 p {
   font-size: 1.05rem;
+}
+
+h3 {
+  font-size: 1.2rem;
 }
 
 img,
@@ -1053,7 +1059,7 @@ section,
   }
 
   .section-header p {
-    font-size: 0.98rem;
+    font-size: var(--card-font-size);
   }
 
   .video-card {
@@ -1298,7 +1304,7 @@ section,
   padding: 0.6rem 1rem;
   color: rgba(255, 255, 255, 0.86);
   border-radius: var(--radius-sm);
-  font-size: 0.98rem;
+  font-size: var(--card-font-size);
   font-weight: 600;
   transition: color var(--transition-fast), background-color var(--transition-fast);
 }

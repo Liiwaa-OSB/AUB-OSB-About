@@ -278,7 +278,7 @@
 .gr-acc-row__text {
   margin: 0 0 1.25rem;
   color: var(--color-text-muted);
-  font-size: 0.98rem;
+  font-size: var(--card-font-size);
   line-height: 1.6;
 }
 

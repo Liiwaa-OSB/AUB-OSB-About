@@ -368,7 +368,7 @@
 .sp-sdg-grid {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: var(--space-sm);
+    gap: var(--space-xl);
     margin: 0;
     padding: 0;
     list-style: none;

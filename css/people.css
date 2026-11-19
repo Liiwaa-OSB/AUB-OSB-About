@@ -108,7 +108,6 @@
 .faculty-subgroup>h3 {
     margin: 0 0 var(--space-md);
     color: var(--color-primary);
-    
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -207,7 +206,6 @@
 .person-card h3 {
     margin: 0 0 0.4rem;
     color: var(--color-ink);
-    font-size: 1.15rem;
     font-weight: 700;
     line-height: 1.3;
 }
@@ -344,10 +342,6 @@
         width: 90px;
         height: 90px;
         margin-bottom: 1rem;
-    }
-
-    .person-card h3 {
-        font-size: 1rem;
     }
 
     .person-card .title,

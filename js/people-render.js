@@ -8,6 +8,9 @@ const ADMIN_GROUP_ORDER = [
   "Undergraduate Program"
 ];
 
+// Person to always pin first within their admin group (matched by email)
+const FEATURED_ADMIN_EMAIL = "ys01@aub.edu.lb"; // Dean Yusuf Sidani
+
 const FACULTY_DEPTS = [
   "Business Information & Decision Systems",
   "Finance, Accounting & Managerial Economics",
@@ -80,6 +83,17 @@ function buildFilterUI(options, onFilterChange) {
 }
 
 /* ==========================================
+   HELPER: sorts names including exceptions
+   ========================================== */
+function sortFeaturedFirst(members) {
+  return [...members].sort((a, b) => {
+    const aFeatured = a.email === FEATURED_ADMIN_EMAIL ? 1 : 0;
+    const bFeatured = b.email === FEATURED_ADMIN_EMAIL ? 1 : 0;
+    return bFeatured - aFeatured; // featured (1) before others (0)
+  });
+}
+
+/* ==========================================
    ADMIN PAGE
    ========================================== */
 function renderAdminPage(container) {
@@ -101,7 +115,9 @@ function renderAdminPage(container) {
     contentContainer.innerHTML = "";
     ADMIN_GROUP_ORDER.forEach(group => {
       if (activeFilter !== "all" && activeFilter !== group) return;
-      const members = list.filter(p => adminGroupsOf(p).includes(group));
+      const members = sortFeaturedFirst(
+        list.filter(p => adminGroupsOf(p).includes(group))
+      );
       if (!members.length) return;
 
       const section = document.createElement("section");
